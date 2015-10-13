@@ -1,3 +1,8 @@
+## Build Instructions
+This project utilizes Cocoapods. Please ensure you have <a href="https://guides.cocoapods.org/using/getting-started.html">CocoaPods installed</a>. Once installed, navigate to the project directory and run `pod install`. This will install all libraries necessary. Please do not import libraries directly but use CocoaPods where applicable. Once libraries are installed you can work on the project by opening the `.xcworkspace` file.
+
+In order to build this project you will need keys for Parse.com. Parse will automatically create columns for you if you'd like to use your own keys, or you can use the Code for Orlando keys. Please contact akozlik at g mail.com for access to the keys. Keys should be stored in the root of the project under settings.xml and contain the dictionary keys parse_client_id and parse_application_id.
+
 ## Proto.io Mockup
 https://codefortravel.proto.io/share/?id=f45f246b-3ea7-4587-a8aa-e9dbf0395593&v=3
 

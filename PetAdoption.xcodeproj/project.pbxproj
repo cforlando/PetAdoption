@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B5DA63919042A2C53AC1AA60 /* libPods-PetAdoption.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063E0A5F2B154B58478586AC /* libPods-PetAdoption.a */; };
+		D7099E2D1BCCA6A200DFF2A4 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7099E2C1BCCA6A200DFF2A4 /* settings.plist */; settings = {ASSET_TAGS = (); }; };
 		D71813E51B4F469400A7D16B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71813E41B4F469400A7D16B /* main.m */; };
 		D71813E81B4F469400A7D16B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D71813E71B4F469400A7D16B /* AppDelegate.m */; };
 		D71813EB1B4F469400A7D16B /* PetAdoption.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D71813E91B4F469400A7D16B /* PetAdoption.xcdatamodeld */; };
@@ -16,7 +17,6 @@
 		D71813F31B4F469400A7D16B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71813F21B4F469400A7D16B /* Images.xcassets */; };
 		D71813F61B4F469400A7D16B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71813F41B4F469400A7D16B /* LaunchScreen.xib */; };
 		D71814021B4F469400A7D16B /* PetAdoptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D71814011B4F469400A7D16B /* PetAdoptionTests.m */; };
-		D7DC726F1BC4985100E1A577 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7DC726E1BC4985100E1A577 /* settings.plist */; };
 		D7DC72741BC49CAF00E1A577 /* AnimalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DC72731BC49CAF00E1A577 /* AnimalCollectionViewCell.m */; };
 		D7DC72781BC4A08000E1A577 /* AnimalDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DC72771BC4A08000E1A577 /* AnimalDetailsViewController.m */; };
 /* End PBXBuildFile section */
@@ -35,6 +35,7 @@
 		063E0A5F2B154B58478586AC /* libPods-PetAdoption.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PetAdoption.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED1B76C1138628799DBA242 /* Pods-PetAdoption.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption/Pods-PetAdoption.debug.xcconfig"; sourceTree = "<group>"; };
 		A2AA142CB6DFFF0622294DFC /* Pods-PetAdoption.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption/Pods-PetAdoption.release.xcconfig"; sourceTree = "<group>"; };
+		D7099E2C1BCCA6A200DFF2A4 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
 		D71813DF1B4F469400A7D16B /* PetAdoption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetAdoption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71813E31B4F469400A7D16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71813E41B4F469400A7D16B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		D71813FB1B4F469400A7D16B /* PetAdoptionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetAdoptionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71814001B4F469400A7D16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71814011B4F469400A7D16B /* PetAdoptionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetAdoptionTests.m; sourceTree = "<group>"; };
-		D7DC726E1BC4985100E1A577 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
 		D7DC72721BC49CAF00E1A577 /* AnimalCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalCollectionViewCell.h; sourceTree = "<group>"; };
 		D7DC72731BC49CAF00E1A577 /* AnimalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalCollectionViewCell.m; sourceTree = "<group>"; };
 		D7DC72761BC4A08000E1A577 /* AnimalDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalDetailsViewController.h; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		D71813D61B4F469400A7D16B = {
 			isa = PBXGroup;
 			children = (
-				D7DC726E1BC4985100E1A577 /* settings.plist */,
+				D7099E2C1BCCA6A200DFF2A4 /* settings.plist */,
 				D71813E11B4F469400A7D16B /* PetAdoption */,
 				D71813FE1B4F469400A7D16B /* PetAdoptionTests */,
 				D71813E01B4F469400A7D16B /* Products */,
@@ -266,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D71813F11B4F469400A7D16B /* Main.storyboard in Resources */,
-				D7DC726F1BC4985100E1A577 /* settings.plist in Resources */,
+				D7099E2D1BCCA6A200DFF2A4 /* settings.plist in Resources */,
 				D71813F61B4F469400A7D16B /* LaunchScreen.xib in Resources */,
 				D71813F31B4F469400A7D16B /* Images.xcassets in Resources */,
 			);

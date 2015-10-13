@@ -4,6 +4,7 @@
 target 'PetAdoption' do
 
 pod 'Parse'
+pod 'ParseUI'
 
 end
 

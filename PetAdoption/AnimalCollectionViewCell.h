@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
 
 @interface AnimalCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet PFImageView *imageView;
 @property (nonatomic, retain) IBOutlet UILabel *captionLabel;
 
 @end

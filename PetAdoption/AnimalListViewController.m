@@ -8,6 +8,7 @@
 
 #import "AnimalListViewController.h"
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 #import "AnimalCollectionViewCell.h"
 
@@ -40,8 +41,6 @@
         } else {
             animalsArray = [NSMutableArray arrayWithArray:objects];
             
-            NSLog(@"%@", animalsArray);
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView reloadData];
             });
@@ -64,6 +63,16 @@
     
     PFObject *animal = [animalsArray objectAtIndex:indexPath.row];
     cell.captionLabel.text = animal[@"name"];
+
+    PFRelation *photos = [animal relationForKey:@"photos"];
+    [[photos query] getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        NSLog(@"%@", object);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.imageView.file = object[@"image"];
+            [cell.imageView loadInBackground];
+        });
+    }];
+
     
     return cell;
 }
