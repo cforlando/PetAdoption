@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"City of Lady Lake Animal Services", nil);
+    self.title = NSLocalizedString(@"Town of Lady Lake Animal Services", nil);
     // Do any  additional setup after loading the view, typically from a nib.
     
     [self fetchAnimals];
@@ -65,6 +65,7 @@
     cell.captionLabel.text = animal[@"name"];
 
     PFRelation *photos = [animal relationForKey:@"photos"];
+    
     [[photos query] getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         NSLog(@"%@", object);
         dispatch_async(dispatch_get_main_queue(), ^{

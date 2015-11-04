@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B5DA63919042A2C53AC1AA60 /* libPods-PetAdoption.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063E0A5F2B154B58478586AC /* libPods-PetAdoption.a */; };
-		D7099E2D1BCCA6A200DFF2A4 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7099E2C1BCCA6A200DFF2A4 /* settings.plist */; settings = {ASSET_TAGS = (); }; };
+		D7099E2D1BCCA6A200DFF2A4 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7099E2C1BCCA6A200DFF2A4 /* settings.plist */; };
 		D71813E51B4F469400A7D16B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71813E41B4F469400A7D16B /* main.m */; };
 		D71813E81B4F469400A7D16B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D71813E71B4F469400A7D16B /* AppDelegate.m */; };
 		D71813EB1B4F469400A7D16B /* PetAdoption.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D71813E91B4F469400A7D16B /* PetAdoption.xcdatamodeld */; };
@@ -50,6 +50,7 @@
 		D71813FB1B4F469400A7D16B /* PetAdoptionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetAdoptionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71814001B4F469400A7D16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71814011B4F469400A7D16B /* PetAdoptionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetAdoptionTests.m; sourceTree = "<group>"; };
+		D72FCA991BE98F3500BF199C /* PetAdoption.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PetAdoption.xcconfig; sourceTree = "<group>"; };
 		D7DC72721BC49CAF00E1A577 /* AnimalCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalCollectionViewCell.h; sourceTree = "<group>"; };
 		D7DC72731BC49CAF00E1A577 /* AnimalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalCollectionViewCell.m; sourceTree = "<group>"; };
 		D7DC72761BC4A08000E1A577 /* AnimalDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalDetailsViewController.h; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 			children = (
 				D71813E31B4F469400A7D16B /* Info.plist */,
 				D71813E41B4F469400A7D16B /* main.m */,
+				D72FCA991BE98F3500BF199C /* PetAdoption.xcconfig */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -368,6 +370,7 @@
 /* Begin XCBuildConfiguration section */
 		D71814031B4F469400A7D16B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D72FCA991BE98F3500BF199C /* PetAdoption.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -411,6 +414,7 @@
 		};
 		D71814041B4F469400A7D16B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D72FCA991BE98F3500BF199C /* PetAdoption.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

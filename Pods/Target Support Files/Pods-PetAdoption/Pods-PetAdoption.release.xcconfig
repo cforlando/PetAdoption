@@ -4,3 +4,4 @@ OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${P
 OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-PetAdoption-Bolts" -l"Pods-PetAdoption-Parse" -l"Pods-PetAdoption-ParseUI" -l"sqlite3" -l"z" -framework "AudioToolbox" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreLocation" -framework "Foundation" -framework "QuartzCore" -framework "Security" -framework "StoreKit" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "Accounts" -weak_framework "Social"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods
+
