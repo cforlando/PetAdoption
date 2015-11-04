@@ -20,7 +20,8 @@
 
 @implementation AnimalListViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Town of Lady Lake Animal Services", nil);
@@ -30,8 +31,8 @@
 
 }
 
--(void)fetchAnimals {
-    
+- (void)fetchAnimals
+{
     PFQuery *query = [PFQuery queryWithClassName:@"Animal"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
@@ -49,24 +50,27 @@
 }
 
 #pragma mark UICollectionView Data Source and Delegate Methods
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
     return 1;
 }
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
     return [animalsArray count];
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
     AnimalCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AnimalCell" forIndexPath:indexPath];
     
     PFObject *animal = [animalsArray objectAtIndex:indexPath.row];
     cell.captionLabel.text = animal[@"name"];
 
     PFRelation *photos = [animal relationForKey:@"photos"];
-    
-    [[photos query] getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+    [[photos query] getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error)
+    {
         NSLog(@"%@", object);
         dispatch_async(dispatch_get_main_queue(), ^{
             cell.imageView.file = object[@"image"];
@@ -74,23 +78,27 @@
         });
     }];
 
-    
     return cell;
 }
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
     [self performSegueWithIdentifier:@"showDetails" sender:self];
 }
 
 #pragma mark Segue Methods
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showDetails"]) {
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showDetails"])
+    {
 
     }
 }
 
 #pragma mark - Memory methods
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
