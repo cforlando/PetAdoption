@@ -10,7 +10,7 @@
 
 @interface AnimalListViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (nonatomic, retain) IBOutlet UICollectionView *collectionView;
+@property(nonatomic, retain) IBOutlet UICollectionView *collectionView;
 
 
 @end

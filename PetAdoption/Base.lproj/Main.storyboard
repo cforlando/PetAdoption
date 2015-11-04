@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TBI-zM-nwy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TBI-zM-nwy">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -12,6 +12,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kwb-tl-KG4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Kbw-jj-CLi"/>
@@ -35,6 +36,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Glk-NK-CxX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6N9-T0-TnF">
                                     <size key="itemSize" width="182" height="182"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -51,16 +53,20 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vj-pL-moV" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
+                                                    <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be3-qd-z2X">
                                                     <rect key="frame" x="8" y="147" width="166" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <animations/>
                                         <connections>
                                             <outlet property="captionLabel" destination="Be3-qd-z2X" id="P1Y-Rr-Pif"/>
                                             <outlet property="imageView" destination="6vj-pL-moV" id="UQ2-f5-pO5"/>
@@ -73,6 +79,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Glk-NK-CxX" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="1JL-Y3-HNN"/>
@@ -89,6 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="74" y="226"/>
         </scene>
         <!--Animal Details View Controller-->
         <scene sceneID="p64-aG-I7N">
@@ -101,12 +109,36 @@
                     <view key="view" contentMode="scaleToFill" id="cDZ-CD-4LX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l6B-Xm-9T0" customClass="PFImageView">
+                                <rect key="frame" x="197" y="72" width="207" height="207"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="207" id="hUs-hv-OuK"/>
+                                    <constraint firstAttribute="width" constant="207" id="pUo-tZ-235"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ky9-a3-Nd0">
+                                <rect key="frame" x="263" y="287" width="75" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ky9-a3-Nd0" firstAttribute="top" secondItem="l6B-Xm-9T0" secondAttribute="bottom" constant="8" id="8u8-0x-rtK"/>
+                            <constraint firstItem="ky9-a3-Nd0" firstAttribute="centerX" secondItem="l6B-Xm-9T0" secondAttribute="centerX" id="Ocb-Wt-tC5"/>
+                            <constraint firstItem="l6B-Xm-9T0" firstAttribute="centerX" secondItem="cDZ-CD-4LX" secondAttribute="centerX" id="WIa-jD-Mzz"/>
+                            <constraint firstItem="l6B-Xm-9T0" firstAttribute="top" secondItem="ERs-mp-lBd" secondAttribute="bottom" constant="8" id="xph-kU-bPe"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrm-B3-lO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="137"/>
+            <point key="canvasLocation" x="776" y="226"/>
         </scene>
     </scenes>
 </document>
