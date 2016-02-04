@@ -1,0 +1,10 @@
+//
+//  PetAdoption.xcconfig
+//  PetAdoption
+//
+//  Created by Andrew Kozlik on 11/3/15.
+//  Copyright (c) 2015 Andrew Kozlik. All rights reserved.
+//
+
+PARSE_CLIENT_ID = "jxdPA2AcundB4WBTlFZeHUOZBiZli5iUo1On62H9"
+PARSE_APPLICATION_ID = "RF9iKp2I6uzQ5ng9DQDeYppaNC3N21w3vmIGop4H"
