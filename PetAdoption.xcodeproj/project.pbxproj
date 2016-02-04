@@ -83,13 +83,13 @@
 		D71813E11B4F469400A7D16B /* PetAdoption */ = {
 			isa = PBXGroup;
 			children = (
+				D71813F41B4F469400A7D16B /* LaunchScreen.xib */,
 				D71813E61B4F469400A7D16B /* AppDelegate.h */,
 				D71813E71B4F469400A7D16B /* AppDelegate.m */,
 				D71813EC1B4F469400A7D16B /* ViewController.h */,
 				D71813ED1B4F469400A7D16B /* ViewController.m */,
 				D71813EF1B4F469400A7D16B /* Main.storyboard */,
 				D71813F21B4F469400A7D16B /* Images.xcassets */,
-				D71813F41B4F469400A7D16B /* LaunchScreen.xib */,
 				D71813E91B4F469400A7D16B /* PetAdoption.xcdatamodeld */,
 				D71813E21B4F469400A7D16B /* Supporting Files */,
 			);
