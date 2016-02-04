@@ -1,0 +1,6 @@
+framework module MGBoxKit {
+  umbrella header "MGBoxKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

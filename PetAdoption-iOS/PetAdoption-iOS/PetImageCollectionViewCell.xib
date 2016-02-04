@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DVv-db-TGf" customClass="PetImageCollectionViewCell" customModule="PetAdoption_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="183" height="194"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="183" height="194"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LIx-Q8-L73">
+                        <rect key="frame" x="0.0" y="0.0" width="183" height="194"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWm-6o-dmx">
+                        <rect key="frame" x="0.0" y="145" width="183" height="49"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAy-ZB-uhg">
+                                <rect key="frame" x="8" y="8" width="167" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.61047952586206899" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vAy-ZB-uhg" secondAttribute="bottom" constant="8" id="3Nf-Jt-VMc"/>
+                            <constraint firstItem="vAy-ZB-uhg" firstAttribute="leading" secondItem="eWm-6o-dmx" secondAttribute="leading" constant="8" id="Bga-za-wSN"/>
+                            <constraint firstAttribute="trailing" secondItem="vAy-ZB-uhg" secondAttribute="trailing" constant="8" id="DQ4-Cm-11H"/>
+                            <constraint firstItem="vAy-ZB-uhg" firstAttribute="top" secondItem="eWm-6o-dmx" secondAttribute="top" constant="8" id="SUr-u9-knj"/>
+                            <constraint firstAttribute="height" constant="49" id="fIa-jz-CFx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LIx-Q8-L73" secondAttribute="trailing" id="QCU-6O-Lli"/>
+                <constraint firstAttribute="trailing" secondItem="eWm-6o-dmx" secondAttribute="trailing" id="WZ9-NA-Dzc"/>
+                <constraint firstAttribute="bottom" secondItem="LIx-Q8-L73" secondAttribute="bottom" id="Ym6-aE-cdm"/>
+                <constraint firstItem="LIx-Q8-L73" firstAttribute="leading" secondItem="DVv-db-TGf" secondAttribute="leading" id="iXV-F1-QiN"/>
+                <constraint firstAttribute="bottom" secondItem="eWm-6o-dmx" secondAttribute="bottom" id="mc6-5D-PzZ"/>
+                <constraint firstItem="eWm-6o-dmx" firstAttribute="leading" secondItem="DVv-db-TGf" secondAttribute="leading" id="p4Q-bM-FVr"/>
+                <constraint firstItem="LIx-Q8-L73" firstAttribute="top" secondItem="DVv-db-TGf" secondAttribute="top" id="u8G-ch-xij"/>
+            </constraints>
+            <size key="customSize" width="183" height="194"/>
+            <connections>
+                <outlet property="petImageView" destination="LIx-Q8-L73" id="aFv-5V-TSP"/>
+                <outlet property="petNameText" destination="vAy-ZB-uhg" id="C2m-eB-Vtl"/>
+                <outlet property="petNameTextContainer" destination="eWm-6o-dmx" id="W5F-ke-Ply"/>
+            </connections>
+            <point key="canvasLocation" x="406.5" y="126"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,0 +1,1 @@
+../../../MGBoxKit/MGBoxKit/Categories/NSString+MGEasySize.h

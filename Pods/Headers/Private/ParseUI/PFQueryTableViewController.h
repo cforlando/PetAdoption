@@ -1,1 +1,0 @@
-../../../ParseUI/ParseUI/Classes/QueryTableViewController/PFQueryTableViewController.h

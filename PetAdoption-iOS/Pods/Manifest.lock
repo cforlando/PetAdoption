@@ -1,0 +1,24 @@
+PODS:
+  - MBProgressHUD (0.9.2)
+  - MGBoxKit (8.0.0):
+    - MGEvents
+    - MGMushParser
+  - MGEvents (1.0.3)
+  - MGMushParser (1.2.1)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+
+DEPENDENCIES:
+  - MBProgressHUD
+  - MGBoxKit
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MGBoxKit: ec903e5c62d1b11481d2b3b8a7d5c5c6a9355b65
+  MGEvents: 739ea3e582a8df05bd1044500c7fb6d8f7aff5c8
+  MGMushParser: e5f80531a96a086694103592db4cbad3ffd78fa5
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+
+COCOAPODS: 0.39.0

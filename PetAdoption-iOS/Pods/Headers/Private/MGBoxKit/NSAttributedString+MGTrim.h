@@ -1,0 +1,1 @@
+../../../MGBoxKit/MGBoxKit/Categories/NSAttributedString+MGTrim.h

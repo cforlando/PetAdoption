@@ -1,0 +1,6 @@
+framework module MGMushParser {
+  umbrella header "MGMushParser-umbrella.h"
+
+  export *
+  module * { export * }
+}
