@@ -16,7 +16,33 @@
                     <view key="view" contentMode="scaleToFill" id="CbM-9t-ObS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s50-ks-ZuE">
+                                <rect key="frame" x="20" y="72" width="560" height="278"/>
+                                <string key="text">Nunc dignissim, risus vel feugiat porttitor, lacus massa facilisis leo, eu ornare diam arcu dictum eros. Donec bibendum, sem nec ultricies porta, odio nisi ultrices nisi, eu sollicitudin nibh tellus sit amet ligula. Nullam justo justo, finibus et purus ac, vulputate hendrerit quam. Nulla suscipit nisl massa, eu fringilla est fringilla sed. Sed in nunc et ex porta porttitor vel a justo. Curabitur non metus ac nulla eleifend gravida. Aenean lorem enim, accumsan posuere vehicula at, mollis et elit. Curabitur ullamcorper laoreet tincidunt.
+
+Maecenas sem lectus, efficitur quis commodo id, vehicula eget nulla. Sed in convallis mauris, quis lacinia magna. Praesent feugiat lorem eu lorem molestie, dignissim finibus diam vehicula. Nullam cursus est ut facilisis feugiat. Duis id bibendum metus. Nam pellentesque nec purus id venenatis. Curabitur non metus massa. In ut pharetra augue.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cfo logo" translatesAutoresizingMaskIntoConstraints="NO" id="wNh-gr-hyd">
+                                <rect key="frame" x="20" y="381" width="231" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="231" id="LmH-D6-jEi"/>
+                                    <constraint firstAttribute="height" constant="81" id="upJ-fl-kSb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wNh-gr-hyd" firstAttribute="top" secondItem="s50-ks-ZuE" secondAttribute="bottom" constant="31" id="35j-Yg-kCa"/>
+                            <constraint firstAttribute="trailing" secondItem="s50-ks-ZuE" secondAttribute="trailing" constant="20" id="9Kh-UB-f21"/>
+                            <constraint firstItem="s50-ks-ZuE" firstAttribute="centerX" secondItem="CbM-9t-ObS" secondAttribute="centerX" id="Z0W-7S-Hhs"/>
+                            <constraint firstItem="s50-ks-ZuE" firstAttribute="leading" secondItem="CbM-9t-ObS" secondAttribute="leading" constant="20" id="h0q-Nu-Awd"/>
+                            <constraint firstItem="wNh-gr-hyd" firstAttribute="leading" secondItem="s50-ks-ZuE" secondAttribute="leading" id="jcY-8l-mOF"/>
+                            <constraint firstItem="s50-ks-ZuE" firstAttribute="top" secondItem="zfH-G2-AVk" secondAttribute="bottom" constant="8" id="ymQ-t4-9tW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xbf-ON-Hrt"/>
                 </viewController>
@@ -42,4 +68,7 @@
             <point key="canvasLocation" x="379" y="1944"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cfo logo" width="1007" height="363"/>
+    </resources>
 </document>
