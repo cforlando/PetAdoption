@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/cforlando/PetAdoption-iOS.svg?branch=master)](https://travis-ci.org/cforlando/PetAdoption-iOS)
 
 ## Build Instructions
+
+[![Join the chat at https://gitter.im/cforlando/PetAdoption-iOS](https://badges.gitter.im/cforlando/PetAdoption-iOS.svg)](https://gitter.im/cforlando/PetAdoption-iOS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 First, please ensure you fork the `master` branch of this repository on <a href="https://github.com/cforlando/PetAdoption-iOS">Code for Orlando's Github project</a>.
 
 This project utilizes Cocoapods. Please ensure you have <a href="https://guides.cocoapods.org/using/getting-started.html">CocoaPods installed</a>. Once installed, navigate to the project directory and run `pod install`. This will install all libraries necessary. Please do not import libraries directly but use CocoaPods where applicable. Once libraries are installed you can work on the project by opening the `.xcworkspace` file.
