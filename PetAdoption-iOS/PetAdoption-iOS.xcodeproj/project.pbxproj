@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F8515E21C6CBD100FACB0F6 /* Pods_PetAdoption_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */; };
+		42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC91251D67C7DA00B3B8FD /* PetCell.swift */; };
 		42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C252291C8881DE00B2BE6D /* BackgroundView.swift */; };
 		42C2522C1C8899BD00B2BE6D /* TransparentNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */; };
 		BFCD4E4B1C8F8BB700F50B72 /* Shelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4E4A1C8F8BB700F50B72 /* Shelter.swift */; };
@@ -133,6 +134,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		42BC91251D67C7DA00B3B8FD /* PetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetCell.swift; path = Views/PetCell.swift; sourceTree = "<group>"; };
 		42C252291C8881DE00B2BE6D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavBar.swift; sourceTree = "<group>"; };
 		45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetAdoption_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +274,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		42BC91241D67C7AF00B3B8FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42BC91251D67C7DA00B3B8FD /* PetCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		96950FBDCCB4B70AC05D197F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +351,7 @@
 				D04088491C94B6C200A53389 /* Util */,
 				D769DE381C62E986008C0BF8 /* Storyboards */,
 				D0950B0E1C61A5D5002E198C /* Nibs */,
+				42BC91241D67C7AF00B3B8FD /* Views */,
 				D0950B0B1C619877002E198C /* CustomComponents */,
 				D0950B081C6193A6002E198C /* ServiceResults */,
 				D0950B051C619364002E198C /* Models */,
@@ -828,6 +839,7 @@
 				42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */,
 				D0950B041C61933F002E198C /* FindPetsService.swift in Sources */,
 				D013BFA71C717935007C8808 /* ImageGalleryView.swift in Sources */,
+				42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */,
 				D0950B131C61A667002E198C /* PetImageCollectionViewCell.swift in Sources */,
 				D0950AFF1C619162002E198C /* LostPetViewController.swift in Sources */,
 				D04088511C94BE8600A53389 /* FontExtension.swift in Sources */,

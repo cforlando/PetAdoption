@@ -8,30 +8,50 @@
 
 import UIKit
 
-class CustomHomeCollectionViewFlowLayout: UICollectionViewFlowLayout {
-	override init() {
+class CustomHomeCollectionViewFlowLayout: UICollectionViewFlowLayout
+{
+    ////////////////////////////////////////////////////////////
+    // MARK: - Properties
+    ////////////////////////////////////////////////////////////
+
+    override var itemSize: CGSize
+    {
+        set
+        {
+
+        }
+
+        get
+        {
+            let itemWidth = CGRectGetWidth(self.collectionView!.frame) / 2.0;
+            return CGSizeMake(itemWidth, itemWidth);
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Initializers
+    ////////////////////////////////////////////////////////////
+
+	override init()
+    {
 		super.init()
 		setupLayout()
 	}
-	
-	override var itemSize: CGSize {
-		set {
-			
-		}
-		get {
-			let itemWidth = CGRectGetWidth(self.collectionView!.frame) * 0.95;
-			return CGSizeMake(itemWidth, itemWidth * 0.6);
-		}
-	}
- 
-	required init?(coder aDecoder: NSCoder) {
+
+    ////////////////////////////////////////////////////////////
+
+	required init?(coder aDecoder: NSCoder)
+    {
 		super.init(coder: aDecoder)
 		setupLayout()
 	}
+
+    ////////////////////////////////////////////////////////////
  
-	func setupLayout() {
-		minimumInteritemSpacing = 10
-		minimumLineSpacing = 10
+	func setupLayout()
+    {
+		minimumInteritemSpacing = 0
+		minimumLineSpacing = 0
 		scrollDirection = .Vertical
 	}
 }
