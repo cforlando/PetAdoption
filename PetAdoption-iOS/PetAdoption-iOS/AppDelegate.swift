@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
-		self.applyDefaultAppStyles();
+		self.applyDefaultAppStyles()
 		
 		return true
 	}
@@ -45,19 +45,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	private func applyDefaultAppStyles() {
-		let navBar = UINavigationBar.appearance();
-		navBar.barTintColor = UIColor.themePrimaryColor();
-		navBar.tintColor = UIColor.themeTintColor();
+		let navBar = UINavigationBar.appearance()
+		navBar.barTintColor = UIColor.themePrimaryColor()
+		navBar.tintColor = UIColor.themeTintColor()
 		navBar.titleTextAttributes = [
 			NSForegroundColorAttributeName : UIColor.themeNavBarTitleColor(),
-			NSFontAttributeName: UIFont.themeNormalFontOfSize(17.0)];
+			NSFontAttributeName: UIFont.themeNormalFontOfSize(17.0)]
 		
-		navBar.barStyle = UIBarStyle.Black;
+		navBar.barStyle = .Black
 		
-		UIButton.appearance().tintColor = UIColor.themeTintColor();
-		UIBarButtonItem.appearance().tintColor = UIColor.themeTintColor();
-		UITabBar.appearance().tintColor = UIColor.themePrimaryColor();
-		UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont.themeNormalFontOfSize(10.0)], forState: UIControlState.Normal);
+		UIButton.appearance().tintColor = UIColor.themeTintColor()
+		UIBarButtonItem.appearance().tintColor = UIColor.themeTintColor()
+		UITabBar.appearance().tintColor = UIColor.themePrimaryColor()
+		UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont.themeNormalFontOfSize(10.0)], forState: UIControlState.Normal)
 	}
 }
 

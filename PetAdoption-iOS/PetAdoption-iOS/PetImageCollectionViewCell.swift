@@ -31,7 +31,7 @@ class PetImageCollectionViewCell: UICollectionViewCell {
 		self.pet = pet;
 		self.petNameText.text = pet.petName;
 		self.petNameAttributeSubLabel.text = pet.petAttributeText;
-		self.petImageView.sd_setImageWithURL(NSURL(string: pet.petImageUrls[0]), placeholderImage: UIImage(named: "Image Placeholder"));
+		self.petImageView.sd_setImageWithURL(NSURL(string: pet.petImageUrls[0]), placeholderImage: UIImage(named: "placeholder"));
 		self.petImageView.contentMode = UIViewContentMode.ScaleAspectFill;
 		
 		if (!didDoInitialSetup) {

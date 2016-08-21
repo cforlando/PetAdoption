@@ -9,4 +9,6 @@ target 'PetAdoption-iOS' do
   pod 'SDWebImage'
   pod 'XLForm'
   pod 'Alamofire', '~> 3.4'
+  pod 'AlamofireImage', '~> 2.0'
+  pod 'Toast-Swift', '~> 1.3.0'
 end

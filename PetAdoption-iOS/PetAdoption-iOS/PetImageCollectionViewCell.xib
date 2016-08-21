@@ -28,7 +28,7 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEb-me-Qvi">
                         <rect key="frame" x="0.0" y="0.0" width="350" height="235"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LIx-Q8-L73">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LIx-Q8-L73">
                                 <rect key="frame" x="0.0" y="0.0" width="350" height="235"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESw-aG-K3g">
@@ -105,7 +105,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Image Placeholder" width="200" height="200"/>
         <image name="Right Chevron" width="82" height="151"/>
+        <image name="placeholder" width="200" height="200"/>
     </resources>
 </document>
