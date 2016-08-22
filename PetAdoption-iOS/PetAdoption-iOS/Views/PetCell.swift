@@ -33,7 +33,7 @@ public class PetCell: UICollectionViewCell, ReusableView
     override public func prepareForReuse()
     {
         super.prepareForReuse()
-        imageView.image = UIImage(named: "placeholder")
+        self.imageView.image = UIImage(named: "placeholder")
     }
 
     ////////////////////////////////////////////////////////////
@@ -43,7 +43,7 @@ public class PetCell: UICollectionViewCell, ReusableView
     func configureCell(with pet: Pet)
     {
         self.pet = pet
-        petNameLabel.text = pet.petName
+        self.petNameLabel.text = pet.petName
         configureImage(self.frame)
     }
 
@@ -59,7 +59,7 @@ public class PetCell: UICollectionViewCell, ReusableView
 
     private func reset()
     {
-        imageView.image = UIImage(named: "placeholder")
+        self.imageView.image = UIImage(named: "placeholder")
         request?.cancel()
     }
 
@@ -67,18 +67,18 @@ public class PetCell: UICollectionViewCell, ReusableView
 
     private func loadImage(width: CGFloat, height: CGFloat)
     {
-        activityIndicator.startAnimating()
+        self.activityIndicator.startAnimating()
 
         if let imageUrl = self.pet?.petImageUrls[0]
         {
-            request = UIImage.getImage(from: imageUrl)
+            self.request = UIImage.getImage(from: imageUrl)
             { image in
                 self.populateCell(image)
             }
         }
         else
         {
-            request = UIImage.getPlaceholderImage(width: Int(width), height: Int(height))
+            self.request = UIImage.getPlaceholderImage(width: Int(width), height: Int(height))
             { image in
                 self.populateCell(image)
             }
@@ -89,10 +89,10 @@ public class PetCell: UICollectionViewCell, ReusableView
 
     private func populateCell(image: UIImage?)
     {
-        activityIndicator.stopAnimating()
+        self.activityIndicator.stopAnimating()
         if let image = image
         {
-            imageView.image = image
+            self.imageView.image = image
         }
     }
 }
