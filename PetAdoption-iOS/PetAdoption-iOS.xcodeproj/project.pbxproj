@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3F8515E21C6CBD100FACB0F6 /* Pods_PetAdoption_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */; };
+		4200BBCD1D6BCFD1003C00A7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */; };
 		42ACC1AA1D689CD2001C7C83 /* UIImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACC1A91D689CD2001C7C83 /* UIImage+Placeholder.swift */; };
 		42ACC1AD1D68A8A3001C7C83 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */; };
 		42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC91251D67C7DA00B3B8FD /* PetCell.swift */; };
 		42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C252291C8881DE00B2BE6D /* BackgroundView.swift */; };
 		42C2522C1C8899BD00B2BE6D /* TransparentNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */; };
+		42F179061D6C9B3800E593F5 /* UIView+TopBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F179051D6C9B3800E593F5 /* UIView+TopBorder.swift */; };
 		BFCD4E4B1C8F8BB700F50B72 /* Shelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4E4A1C8F8BB700F50B72 /* Shelter.swift */; };
 		D013BFA51C716B7E007C8808 /* ImageGalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D013BFA41C716B7E007C8808 /* ImageGalleryView.xib */; };
 		D013BFA71C717935007C8808 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013BFA61C717935007C8808 /* ImageGalleryView.swift */; };
@@ -136,11 +138,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage.framework"; sourceTree = "<group>"; };
 		42ACC1A91D689CD2001C7C83 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Placeholder.swift"; path = "Extensions/UIImage+Placeholder.swift"; sourceTree = "<group>"; };
 		42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = Protocols/ReusableView.swift; sourceTree = "<group>"; };
 		42BC91251D67C7DA00B3B8FD /* PetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetCell.swift; path = Views/PetCell.swift; sourceTree = "<group>"; };
 		42C252291C8881DE00B2BE6D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavBar.swift; sourceTree = "<group>"; };
+		42F179051D6C9B3800E593F5 /* UIView+TopBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+TopBorder.swift"; path = "Extensions/UIView+TopBorder.swift"; sourceTree = "<group>"; };
 		45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetAdoption_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		743003C75DF42CAE3261435B /* Pods-PetAdoption-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		925933A48637FAFF5BE6240D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4200BBCD1D6BCFD1003C00A7 /* AlamofireImage.framework in Frameworks */,
 				D4F2A7781D6A2CA500E92647 /* MapKit.framework in Frameworks */,
 				D4F2A7511D6A0D6800E92647 /* Alamofire.framework in Frameworks */,
 			);
@@ -270,6 +275,7 @@
 		0CC76AEEB5517DD4F07756A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */,
 				D4F2A7771D6A2CA500E92647 /* MapKit.framework */,
 				D4F2A7501D6A0D6800E92647 /* Alamofire.framework */,
 				925933A48637FAFF5BE6240D /* Pods.framework */,
@@ -282,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				42ACC1A91D689CD2001C7C83 /* UIImage+Placeholder.swift */,
+				42F179051D6C9B3800E593F5 /* UIView+TopBorder.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -865,6 +872,7 @@
 				42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */,
 				D0950B131C61A667002E198C /* PetImageCollectionViewCell.swift in Sources */,
 				D0950AFF1C619162002E198C /* LostPetViewController.swift in Sources */,
+				42F179061D6C9B3800E593F5 /* UIView+TopBorder.swift in Sources */,
 				D04088511C94BE8600A53389 /* FontExtension.swift in Sources */,
 				D0950B0A1C6193C0002E198C /* FindPetsResult.swift in Sources */,
 				D0950AC81C618C2F002E198C /* AppDelegate.swift in Sources */,
@@ -1157,6 +1165,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = PetAdoptionTransportKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -1180,6 +1192,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = PetAdoptionTransportKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;

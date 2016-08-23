@@ -8,21 +8,16 @@
 
 import UIKit
 
-class ImageGalleryView: UIView {
-	@IBOutlet var imagePlacholderImageView: UIImageView!
-	static let nibName = "ImageGalleryView";
-	
-	func updateWithPet(imageUrl: String) {
-		let url = NSURL(string: imageUrl);
-        self.imagePlacholderImageView.sd_setImageWithURL(url);
-	}
-	
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+class ImageGalleryView: UIView
+{
+    @IBOutlet var imagePlacholderImageView: UIImageView!
+    static let nibName = "ImageGalleryView"
 
+    ////////////////////////////////////////////////////////////
+	
+    func updateWithPet(imageUrl: String)
+    {
+        let url = NSURL(string: imageUrl)
+        self.imagePlacholderImageView.sd_setImageWithURL(url)
+    }
 }

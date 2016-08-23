@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import PetAdoptionTransportKit
 
 public class PetCell: UICollectionViewCell, ReusableView
 {
@@ -24,7 +25,7 @@ public class PetCell: UICollectionViewCell, ReusableView
     ////////////////////////////////////////////////////////////
 
     private var request: Request?
-    private var pet: Pet?
+    private var pet: PTKPet?
 
     ////////////////////////////////////////////////////////////
     // MARK: - UICollectionViewReusableView
@@ -40,10 +41,10 @@ public class PetCell: UICollectionViewCell, ReusableView
     // MARK: - Helper Functions
     ////////////////////////////////////////////////////////////
 
-    func configureCell(with pet: Pet)
+    func configureCell(with pet: PTKPet)
     {
         self.pet = pet
-        self.petNameLabel.text = pet.petName
+        self.petNameLabel.text = pet.name
         configureImage(self.frame)
     }
 
@@ -69,10 +70,10 @@ public class PetCell: UICollectionViewCell, ReusableView
     {
         self.activityIndicator.startAnimating()
 
-        if let imageUrl = self.pet?.petImageUrls[0]
+        if let imageUrl = self.pet?.imageURLPaths[0]
         {
-            self.request = UIImage.getImage(from: imageUrl)
-            { image in
+            self.request = PTKRequestManager.sharedInstance().request(imageAtPath: imageUrl)
+            { image, error in
                 self.populateCell(image)
             }
         }

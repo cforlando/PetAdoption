@@ -61,7 +61,7 @@ class SearchViewController: XLFormViewController {
 		} else {
 			let storyboard = UIStoryboard(name: "PetListings", bundle: nil)
 			let petListingViewController = storyboard.instantiateViewControllerWithIdentifier("PetListingViewController") as! PetListingViewController
-			petListingViewController.petData = findPetsResult.petsFound
+			//petListingViewController.petData = findPetsResult.petsFound
 			let plural = (findPetsResult.petsFound.count != 1 ? "s" : "")
 			petListingViewController.viewControllerTitle = "\(findPetsResult.petsFound.count) pet\(plural)"
 			self.navigationController?.pushViewController(petListingViewController, animated: true)

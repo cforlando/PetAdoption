@@ -80,6 +80,7 @@ public struct PTKPet: SpecieDetails, Behavior, Medical, Location, CustomStringCo
     public let primaryBreed: String
     public let secondaryBreed: String
     public let shots: PTKMedicalShotStatus
+    public let size: String
     public let type: String
     public let worms: PTKHeartwormTestStatus
     
@@ -120,6 +121,7 @@ public struct PTKPet: SpecieDetails, Behavior, Medical, Location, CustomStringCo
         self.primaryBreed = json[PTKPrimaryBreedKey] as? String ?? "Unknown"
         self.secondaryBreed = json[PTKSecondaryBreedKey] as? String ?? "Unknown"
         self.shots = PTKMedicalShotStatus(rawValue: currentShots) ?? .Unknown
+        self.size = json[PTKSizeKey] as? String ?? "Unknown"
         self.type = json[PTKSpeciesKey] as? String ?? "Unknown"
         self.worms = PTKHeartwormTestStatus(string: wormStatus)
         

@@ -24,7 +24,7 @@ private let PTKShelterUrlKey = "shelterUrl"
 
 public struct PTKPetShelter: Location {
     public let address1: String
-    public let address2: String
+    public let address2: String?
     public let city: String
     public let contact: String
     public let email: String
@@ -33,11 +33,11 @@ public struct PTKPetShelter: Location {
     public let phoneNumber: String
     public let state: String
     public let url: String
-    public let zipcode: Int
+    public let zipcode: String
     
     init(json: [String: AnyObject]) {
         self.address1 = json[PTKShelterAddrLine1Key] as? String ?? ""
-        self.address2 = json[PTKShelterAddrLine2Key] as? String ?? ""
+        self.address2 = json[PTKShelterAddrLine2Key] as? String
         self.city = json[PTKShelterAddrCityKey] as? String ?? ""
         self.contact = json[PTKShelterContactKey] as? String ?? ""
         self.email = json[PTKShelterEmailKey] as? String ?? ""
@@ -45,7 +45,7 @@ public struct PTKPetShelter: Location {
         self.phoneNumber = json[PTKShelterPhoneKey] as? String ?? ""
         self.state = json[PTKShelterAddrStKey] as? String ?? ""
         self.url = json[PTKShelterUrlKey] as? String ?? ""
-        self.zipcode = json[PTKShelterAddrZipKey] as? Int ?? 0
+        self.zipcode = json[PTKShelterAddrZipKey] as? String ?? ""
         
         let latitudes = json[PTKShelterGeoLatKey] as? [CLLocationDegrees]
         let longitudes = json[PTKShelterGeoLonKey] as? [CLLocationDegrees]

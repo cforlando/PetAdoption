@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import PetAdoptionTransportKit
 
-class PetListingDetailViewController: UIViewController
+class PetListingDetailViewController: UIViewController, UIScrollViewDelegate
 {
     ////////////////////////////////////////////////////////////
     // MARK: - IBOutlets
@@ -16,23 +17,35 @@ class PetListingDetailViewController: UIViewController
 
     @IBOutlet var containerScrollView: UIScrollView!
     @IBOutlet var imageContainerScrollView: UIScrollView!
-    @IBOutlet var detailsView: UIView!
-    @IBOutlet var additionalDetailsTableView: UITableView!
     @IBOutlet var imageGalleryGradientView: UIView!
 
     @IBOutlet var imageContainerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var subTitleLabel: UILabel!
-    @IBOutlet var detailsLabel: UILabel!
-    @IBOutlet var shadowView: UIView!
 
+    @IBOutlet weak var generalInfoView: UIView!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+
+    @IBOutlet weak var descriptionView: UIView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+
+    @IBOutlet weak var contactInfoView: UIView!
+    @IBOutlet weak var shelterNameLabel: UILabel!
+    @IBOutlet weak var shelterAddress1Label: UILabel!
+    @IBOutlet weak var shelterAddress2Label: UILabel!
+    @IBOutlet weak var cityStateZipLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var emailAddressLabel: UILabel!
+    
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
     let cellIdentifier = "Cell"
-    var pet : Pet!
+    var pet : PTKPet!
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -40,23 +53,43 @@ class PetListingDetailViewController: UIViewController
 
     override func viewDidLoad()
     {
+        // TODO: The Call, Email, and Website controls under the images will still need to be implemented.
+        
         super.viewDidLoad()
-        self.title = pet.petName
-        self.pageControl.numberOfPages = self.pet.petImageUrls.count
-        self.titleLabel.text = self.pet.petName
-        self.subTitleLabel.text = self.pet.petAttributeText
-		
-        self.shadowView.layer.shadowOpacity = 0.3
-        self.shadowView.layer.shadowColor = UIColor.blackColor().CGColor
-        self.shadowView.layer.shadowOffset = CGSizeMake(0, 0)
-        self.shadowView.layer.shouldRasterize = true
+        self.title = self.pet.name
+        self.pageControl.numberOfPages = self.pet.imageURLPaths.count
+        self.titleLabel.text = self.pet.name
+
+        let shelter = self.pet.petShelter
+
+        self.generalInfoView.addTopBorder()
+        self.genderLabel.text = self.pet.gender.rawValue
+        self.sizeLabel.text = self.pet.size
+        self.ageLabel.text = self.pet.age.description
+        self.locationLabel.text = shelter.name == "" ? "N/A" : shelter.name
+
+        self.descriptionView.addTopBorder()
+        self.descriptionLabel.text = self.pet.description
+
+        self.contactInfoView.addTopBorder()
+        self.shelterNameLabel.text = shelter.name
+        self.shelterAddress1Label.text = shelter.address1
+        if let address2 = shelter.address2
+        {
+            self.shelterAddress2Label.hidden = false
+            self.shelterAddress2Label.text = address2
+        }
+        else
+        {
+            self.shelterAddress2Label.hidden = true
+        }
+
+        let isCityStateZipBlank = (shelter.city == "") || (shelter.state == "") || (shelter.zipcode == "")
+        self.cityStateZipLabel.text = isCityStateZipBlank ? "" : "\(shelter.city) \(shelter.state), \(shelter.zipcode)"
+        self.phoneLabel.text = shelter.phoneNumber
+        self.emailAddressLabel.text = shelter.email
 		
         self.imageContainerScrollView.delegate = self
-		
-        self.additionalDetailsTableView.delegate = self
-        self.additionalDetailsTableView.dataSource = self
-		
-        self.setBackgroundGradient()
     }
 
     ////////////////////////////////////////////////////////////
@@ -77,9 +110,9 @@ class PetListingDetailViewController: UIViewController
 		
         self.imageContainerViewHeightConstraint.constant = self.imageContainerScrollView.frame.width * 0.6
 		
-        let fullWidth : CGFloat = CGFloat(self.pet.petImageUrls.count) * self.imageContainerScrollView.frame.width
+        let fullWidth : CGFloat = CGFloat(self.pet.imageURLPaths.count) * self.imageContainerScrollView.frame.width
 		
-        for (index, petImageUrl) in self.pet.petImageUrls.enumerate()
+        for (index, petImageUrl) in self.pet.imageURLPaths.enumerate()
         {
             let xOffset = self.imageContainerScrollView.frame.width * CGFloat(index)
 		
@@ -95,22 +128,6 @@ class PetListingDetailViewController: UIViewController
 		
         self.imageContainerScrollView.contentSize = CGSizeMake(fullWidth, self.imageContainerScrollView.frame.height)
     }
-
-    ////////////////////////////////////////////////////////////
-
-    private func setBackgroundGradient()
-    {
-        self.imageGalleryGradientView.setNeedsLayout()
-        self.imageGalleryGradientView.layoutIfNeeded()
-        self.imageGalleryGradientView.backgroundColor = UIColor.clearColor()
-		
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = self.imageGalleryGradientView.bounds
-        gradient.colors = [UIColor(white: 0.5, alpha: 0).CGColor, UIColor.themePrimaryColor().CGColor]
-        gradient.locations = [0.05, 1]
-		
-        self.imageGalleryGradientView.layer.insertSublayer(gradient, atIndex: 0)
-    }
 	
     ////////////////////////////////////////////////////////////
     // MARK: - UIScrollViewDelegate
@@ -120,7 +137,7 @@ class PetListingDetailViewController: UIViewController
     {
         if (scrollView == self.imageContainerScrollView)
         {
-            let numberOfPages = self.pet.petImageUrls.count
+            let numberOfPages = self.pet.imageURLPaths.count
             let fullContentWidth = scrollView.contentSize.width
             let widthOfIndividualItems = Int(fullContentWidth / CGFloat(numberOfPages))
 			
@@ -129,38 +146,5 @@ class PetListingDetailViewController: UIViewController
 
             self.pageControl.currentPage = page
         }
-    }
-}
-
-////////////////////////////////////////////////////////////
-
-extension PetListingDetailViewController : UITableViewDelegate { }
-extension PetListingDetailViewController : UITableViewDataSource
-{
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
-        return 1
-    }
-
-    ////////////////////////////////////////////////////////////
-	
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return self.pet.petAttributes.count
-    }
-
-    ////////////////////////////////////////////////////////////
-	
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
-        let data = self.pet.petAttributes[indexPath.row]
-		
-        cell!.textLabel?.text = data.attributeTitle
-        cell!.textLabel?.backgroundColor = UIColor.clearColor()
-        cell!.detailTextLabel?.text = data.attributeValue
-        cell!.detailTextLabel?.backgroundColor = UIColor.clearColor()
-		
-        return cell!
     }
 }

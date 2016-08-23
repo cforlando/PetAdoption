@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 
 private let PTKSharedInstance = PTKRequestManager()
 private let PTKBaseURL = "http://cfo-pet-adoption-server.eastus.cloudapp.azure.com/api/v2/"
@@ -85,16 +86,14 @@ public class PTKRequestManager: NSObject {
         }
     }
     
-    public func request(imageAtPath aPath: String, completion complete: PTKRequestImageComplete) {
-        Alamofire.request(.GET, aPath).responseData { (response: Response<NSData, NSError>) in
+    public func request(imageAtPath aPath: String, completion complete: PTKRequestImageComplete) -> Request {
+        return Alamofire.request(.GET, aPath).responseImage { (response: Response<Image, NSError>) in
             if response.result.isSuccess {
-                guard let data = response.result.value else {
+                guard let image = response.result.value else {
                     let error = NSError(domain: "com.petadoption.petadoptiontransportkit.requestimage", code: 2, userInfo: ["Data":"response was a success, but data is missing", "url":aPath])
                     complete(image: nil, error: error)
                     return
                 }
-                
-                let image = UIImage(data: data)
                 
                 complete(image: image, error: response.result.error)
             } else {

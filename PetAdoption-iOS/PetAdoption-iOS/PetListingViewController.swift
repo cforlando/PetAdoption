@@ -8,6 +8,7 @@
 
 import UIKit
 import Toast_Swift
+import PetAdoptionTransportKit
 
 class PetListingViewController: UIViewController
 {
@@ -27,8 +28,9 @@ class PetListingViewController: UIViewController
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
-    var petData = [Pet]()
+    var petData = [PTKPet]()
     var viewControllerTitle = "Home"
+    let requestManager = PTKRequestManager.sharedInstance()
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -37,26 +39,42 @@ class PetListingViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.navigationItem.title = NSLocalizedString("Town Of Lady Lake", comment: "")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         self.collectionView.collectionViewLayout = CustomHomeCollectionViewFlowLayout()
 
-        //Load some data (fake data for now)
-        let petService = FindPetsService()
-        petService.execute()
-        { result in
-            if (result.code == .Success)
+        requestManager.request(AllPetsWithcompletion:
+        { pets, error in
+            if let error = error
             {
-                self.petData = result.petsFound
-                self.collectionView.reloadData()
+                self.view.makeToast(error.localizedDescription)
             }
             else
             {
-                self.view.makeToast("There was a problem fetching pet data")
+                if let pets = pets
+                {
+                    self.petData = pets
+                    self.collectionView.reloadData()
+                }
             }
-        }
+        })
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = NSLocalizedString("Town Of Lady Lake", comment: "")
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        self.navigationItem.title = NSLocalizedString("Back", comment: "")
     }
 
     ////////////////////////////////////////////////////////////
@@ -66,9 +84,10 @@ class PetListingViewController: UIViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if let vc = segue.destinationViewController as? PetListingDetailViewController
-            where segue.identifier == PetListingViewController.SEGUE_TO_PET_DETAILS_ID
+            where segue.identifier == PetListingViewController.SEGUE_TO_PET_DETAILS_ID,
+           let indexPath = sender as? NSIndexPath
         {
-            vc.pet = sender as? Pet
+            vc.pet = self.petData[indexPath.row]
         }
     }
 }
@@ -104,7 +123,6 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-        let pet = petData[indexPath.row]
-        performSegueWithIdentifier(PetListingViewController.SEGUE_TO_PET_DETAILS_ID, sender: pet)
+        performSegueWithIdentifier(PetListingViewController.SEGUE_TO_PET_DETAILS_ID, sender: indexPath)
     }
 }
