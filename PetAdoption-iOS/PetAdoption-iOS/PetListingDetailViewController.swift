@@ -54,7 +54,7 @@ class PetListingDetailViewController: UIViewController, UIScrollViewDelegate
     override func viewDidLoad()
     {
         // TODO: The Call, Email, and Website controls under the images will still need to be implemented.
-        
+
         super.viewDidLoad()
         self.title = self.pet.name
         self.pageControl.numberOfPages = self.pet.imageURLPaths.count
@@ -62,16 +62,16 @@ class PetListingDetailViewController: UIViewController, UIScrollViewDelegate
 
         let shelter = self.pet.petShelter
 
-        self.generalInfoView.addTopBorder()
+        self.generalInfoView.addTopBorder(color: UIColor.darkGrayColor())
         self.genderLabel.text = self.pet.gender.rawValue
         self.sizeLabel.text = self.pet.size
         self.ageLabel.text = self.pet.age.description
         self.locationLabel.text = shelter.name == "" ? "N/A" : shelter.name
 
-        self.descriptionView.addTopBorder()
+        self.descriptionView.addTopBorder(color: UIColor.darkGrayColor())
         self.descriptionLabel.text = self.pet.description
 
-        self.contactInfoView.addTopBorder()
+        self.contactInfoView.addTopBorder(color: UIColor.darkGrayColor())
         self.shelterNameLabel.text = shelter.name
         self.shelterAddress1Label.text = shelter.address1
         if let address2 = shelter.address2
