@@ -15,20 +15,30 @@ class NewPetListingDetailVC: UITableViewController
     // MARK: - IBOutlets
     ////////////////////////////////////////////////////////////
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var sizeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    // Image View
     @IBOutlet weak var imageContainerScrollView: UIScrollView!
     @IBOutlet var imageContainerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var shelterNameLabel: UILabel!
-    @IBOutlet weak var shelterAddress1Label: UILabel!
-    @IBOutlet weak var shelterAddress2Label: UILabel!
-    @IBOutlet weak var shelterCityStateZipLabel: UILabel!
-    @IBOutlet weak var shelterPhoneNumberLabel: UILabel!
-    @IBOutlet weak var shelterEmailLabel: UILabel!
+
+    // Description
+    @IBOutlet weak var descriptionLabel: UILabel!
+
+    // Features
+    @IBOutlet weak var primaryBreedLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var neuteredLabel: UILabel!
+    @IBOutlet weak var housebrokenLabel: UILabel!
+    @IBOutlet weak var declawedLabel: UILabel!
+
+    // Personality
+    @IBOutlet weak var goodWithKidsLabel: UILabel!
+    @IBOutlet weak var goodWithDogsLabel: UILabel!
+    @IBOutlet weak var goodWithCatsLabel: UILabel!
+
+    // Adoption Info
+    @IBOutlet weak var intakeDateLabel: UILabel!
     
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
@@ -64,29 +74,31 @@ class NewPetListingDetailVC: UITableViewController
     func configureView()
     {
         self.title = self.pet.name
-        self.nameLabel.text = self.pet.name
         self.pageControl.numberOfPages = self.pet.imageURLPaths.count
-
-        self.genderLabel.text = "Gender: \(self.pet.gender.rawValue)"
-        self.ageLabel.text = "Age: \(self.pet.age.description)"
-        self.sizeLabel.text = "Size: \(self.pet.size)"
         self.descriptionLabel.text = self.pet.description
 
-        let shelter = self.pet.petShelter
-        self.shelterNameLabel.text = shelter.name
-        self.shelterAddress1Label.text = shelter.address1
-        if let address2 = shelter.address2
+        self.primaryBreedLabel.text = self.pet.primaryBreed
+        self.genderLabel.text = self.pet.gender.rawValue
+        self.ageLabel.text = self.pet.age.description
+        self.sizeLabel.text = self.pet.size
+        self.neuteredLabel.text = self.pet.isSpayed ? "Yes" : "No"
+        self.housebrokenLabel.text = self.pet.houseTrained.rawValue
+        self.declawedLabel.text = self.pet.declawed.rawValue
+
+        self.goodWithKidsLabel.text = self.pet.isGoodWithKids ? "Yes" : "No"
+        self.goodWithDogsLabel.text = self.pet.isGoodWithDogs ? "Yes" : "No"
+        self.goodWithCatsLabel.text = self.pet.isGoodWithCats ? "Yes" : "No"
+
+        if let intakeDate = self.pet.intakeDate
         {
-            self.shelterAddress2Label.hidden = false
-            self.shelterAddress2Label.text = address2
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = .LongStyle
+            self.intakeDateLabel.text = formatter.stringFromDate(intakeDate)
         }
         else
         {
-            self.shelterAddress2Label.hidden = true
+            self.intakeDateLabel.text = "Unknown"
         }
-        self.shelterCityStateZipLabel.text = "\(shelter.city), \(shelter.state) \(shelter.zipcode)"
-        self.shelterPhoneNumberLabel.text = shelter.phoneNumber
-        self.shelterEmailLabel.text = shelter.email
     }
 
     ////////////////////////////////////////////////////////////
