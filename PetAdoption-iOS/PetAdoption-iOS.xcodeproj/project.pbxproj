@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F8515E21C6CBD100FACB0F6 /* Pods_PetAdoption_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */; };
 		4200BBCD1D6BCFD1003C00A7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */; };
+		420FD5761D6F255A00E5DD89 /* NewPetListingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420FD5751D6F255A00E5DD89 /* NewPetListingDetailVC.swift */; };
 		42ACC1AA1D689CD2001C7C83 /* UIImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACC1A91D689CD2001C7C83 /* UIImage+Placeholder.swift */; };
 		42ACC1AD1D68A8A3001C7C83 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */; };
 		42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC91251D67C7DA00B3B8FD /* PetCell.swift */; };
@@ -139,6 +140,7 @@
 
 /* Begin PBXFileReference section */
 		4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage.framework"; sourceTree = "<group>"; };
+		420FD5751D6F255A00E5DD89 /* NewPetListingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPetListingDetailVC.swift; path = Controllers/NewPetListingDetailVC.swift; sourceTree = "<group>"; };
 		42ACC1A91D689CD2001C7C83 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Placeholder.swift"; path = "Extensions/UIImage+Placeholder.swift"; sourceTree = "<group>"; };
 		42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = Protocols/ReusableView.swift; sourceTree = "<group>"; };
 		42BC91251D67C7DA00B3B8FD /* PetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetCell.swift; path = Views/PetCell.swift; sourceTree = "<group>"; };
@@ -198,7 +200,6 @@
 		D4F2A7381D6A081F00E92647 /* PetAdoptionTransportKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetAdoptionTransportKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F2A73F1D6A081F00E92647 /* PetAdoptionTransportKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAdoptionTransportKitTests.swift; sourceTree = "<group>"; };
 		D4F2A7411D6A081F00E92647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4F2A74F1D6A099B00E92647 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		D4F2A7501D6A0D6800E92647 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/PetAdoption-iOS-etpahjapkfgmvghajmjlabyjaprb/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
 		D4F2A7521D6A1E3C00E92647 /* PTKAgeRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTKAgeRange.swift; sourceTree = "<group>"; };
 		D4F2A7541D6A1E6000E92647 /* PTKHouseTrained.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTKHouseTrained.swift; sourceTree = "<group>"; };
@@ -390,7 +391,6 @@
 				D0950ACE1C618C2F002E198C /* Assets.xcassets */,
 				D0950AD01C618C2F002E198C /* LaunchScreen.storyboard */,
 				D0950AD31C618C2F002E198C /* Info.plist */,
-				D4F2A74F1D6A099B00E92647 /* MyPlayground.playground */,
 			);
 			path = "PetAdoption-iOS";
 			sourceTree = "<group>";
@@ -479,6 +479,7 @@
 			children = (
 				D0950AFA1C619146002E198C /* PetListingViewController.swift */,
 				D0E5367A1C70412A004794D8 /* PetListingDetailViewController.swift */,
+				420FD5751D6F255A00E5DD89 /* NewPetListingDetailVC.swift */,
 			);
 			name = PetListings;
 			sourceTree = "<group>";
@@ -876,6 +877,7 @@
 				D04088511C94BE8600A53389 /* FontExtension.swift in Sources */,
 				D0950B0A1C6193C0002E198C /* FindPetsResult.swift in Sources */,
 				D0950AC81C618C2F002E198C /* AppDelegate.swift in Sources */,
+				420FD5761D6F255A00E5DD89 /* NewPetListingDetailVC.swift in Sources */,
 				D0950B0D1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift in Sources */,
 				D0950AFB1C619146002E198C /* PetListingViewController.swift in Sources */,
 				D0E5367B1C70412A004794D8 /* PetListingDetailViewController.swift in Sources */,
