@@ -17,14 +17,12 @@ class PetListingViewController: UIViewController
     ////////////////////////////////////////////////////////////
 
     static let SEGUE_TO_PET_DETAILS_ID = "segueToPetDetails"
-    static let SEGUE_TO_NEW_PET_DETAILS_ID = "segueToNewPetDetails"
 
     ////////////////////////////////////////////////////////////
     // MARK: - IBOutlets
     ////////////////////////////////////////////////////////////
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var viewSwitch: UISwitch!
 
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
@@ -33,7 +31,6 @@ class PetListingViewController: UIViewController
     var petData = [PTKPet]()
     var viewControllerTitle = "Home"
     let requestManager = PTKRequestManager.sharedInstance()
-    var segueIdentifier = PetListingViewController.SEGUE_TO_PET_DETAILS_ID
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -81,27 +78,12 @@ class PetListingViewController: UIViewController
     }
 
     ////////////////////////////////////////////////////////////
-    // MARK: - IBActions
-    ////////////////////////////////////////////////////////////
-
-    @IBAction func switchToggled(sender: AnyObject)
-    {
-        self.segueIdentifier = viewSwitch.on ? PetListingViewController.SEGUE_TO_NEW_PET_DETAILS_ID : PetListingViewController.SEGUE_TO_PET_DETAILS_ID
-    }
-
-    ////////////////////////////////////////////////////////////
     // MARK: - Navigation
     ////////////////////////////////////////////////////////////
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        if let vc = segue.destinationViewController as? NewPetListingDetailVC
-            where segue.identifier == PetListingViewController.SEGUE_TO_NEW_PET_DETAILS_ID,
-           let indexPath = sender as? NSIndexPath
-        {
-            vc.pet = self.petData[indexPath.row]
-        }
-        else if let vc = segue.destinationViewController as? PetListingDetailViewController
+        if let vc = segue.destinationViewController as? PetListingDetailVC
             where segue.identifier == PetListingViewController.SEGUE_TO_PET_DETAILS_ID,
             let indexPath = sender as? NSIndexPath
         {
@@ -141,6 +123,6 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-        performSegueWithIdentifier(segueIdentifier, sender: indexPath)
+        performSegueWithIdentifier(PetListingViewController.SEGUE_TO_PET_DETAILS_ID, sender: indexPath)
     }
 }

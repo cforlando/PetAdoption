@@ -12,7 +12,7 @@ import XLForm
 import MBProgressHUD
 
 class SearchViewController: XLFormViewController {
-	
+/*
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -127,6 +127,6 @@ class SearchViewController: XLFormViewController {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-	
+*/	
 }
 

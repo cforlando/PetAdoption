@@ -77,13 +77,6 @@ public class PetCell: UICollectionViewCell, ReusableView
                 self.populateCell(image)
             }
         }
-        else
-        {
-            self.request = UIImage.getPlaceholderImage(width: Int(width), height: Int(height))
-            { image in
-                self.populateCell(image)
-            }
-        }
     }
 
     ////////////////////////////////////////////////////////////

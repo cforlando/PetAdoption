@@ -1,5 +1,5 @@
 //
-//  NewPetListingDetailVC.swift
+//  PetListingDetailVC.swift
 //  PetAdoption-iOS
 //
 //  Created by Keli'i Martin on 8/25/16.
@@ -9,7 +9,7 @@
 import UIKit
 import PetAdoptionTransportKit
 
-class NewPetListingDetailVC: UITableViewController
+class PetListingDetailVC: UITableViewController
 {
     ////////////////////////////////////////////////////////////
     // MARK: - IBOutlets
@@ -44,7 +44,41 @@ class NewPetListingDetailVC: UITableViewController
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
+    var descriptionSection = [String : String?]()
+    var featuresSection = [String : String?]()
+    var personalitySection = [String : String?]()
+    var adoptionInfoSection = [String : String?]()
     var pet: PTKPet!
+    {
+        didSet
+        {
+            descriptionSection["Description"] = pet.description
+
+            featuresSection["Breed"] = pet.primaryBreed
+            featuresSection["Gender"] = pet.gender.rawValue
+            featuresSection["Age"] = pet.age.description
+            featuresSection["Weight"] = pet.size
+            featuresSection["Neutered"] = pet.isSpayed ? "Yes" : "No"
+            featuresSection["Housebroken"] = pet.houseTrained.rawValue
+            featuresSection["Declawed"] = pet.declawed.rawValue
+
+            personalitySection["Good with Kids"] = pet.isGoodWithKids ? "Yes" : "No"
+            personalitySection["Good with Dogs"] = pet.isGoodWithDogs ? "Yes" : "No"
+            personalitySection["Good with Cats"] = pet.isGoodWithCats ? "Yes" : "No"
+
+            if let intakeDate = self.pet.intakeDate
+            {
+                let formatter = NSDateFormatter()
+                formatter.dateStyle = .LongStyle
+                adoptionInfoSection["Adoptable Since"] = formatter.stringFromDate(intakeDate)
+            }
+            else
+            {
+                adoptionInfoSection["Adoptable Since"] = "Unknown"
+            }
+
+        }
+    }
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -99,6 +133,10 @@ class NewPetListingDetailVC: UITableViewController
         {
             self.intakeDateLabel.text = "Unknown"
         }
+
+        print(featuresSection)
+        print(personalitySection)
+        print(adoptionInfoSection)
     }
 
     ////////////////////////////////////////////////////////////

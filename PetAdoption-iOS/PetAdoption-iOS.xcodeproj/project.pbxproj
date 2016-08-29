@@ -9,18 +9,15 @@
 /* Begin PBXBuildFile section */
 		3F8515E21C6CBD100FACB0F6 /* Pods_PetAdoption_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */; };
 		4200BBCD1D6BCFD1003C00A7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */; };
-		420FD5761D6F255A00E5DD89 /* NewPetListingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420FD5751D6F255A00E5DD89 /* NewPetListingDetailVC.swift */; };
-		42ACC1AA1D689CD2001C7C83 /* UIImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACC1A91D689CD2001C7C83 /* UIImage+Placeholder.swift */; };
+		420FD5761D6F255A00E5DD89 /* PetListingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */; };
 		42ACC1AD1D68A8A3001C7C83 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */; };
 		42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC91251D67C7DA00B3B8FD /* PetCell.swift */; };
 		42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C252291C8881DE00B2BE6D /* BackgroundView.swift */; };
 		42C2522C1C8899BD00B2BE6D /* TransparentNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */; };
-		42F179061D6C9B3800E593F5 /* UIView+TopBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F179051D6C9B3800E593F5 /* UIView+TopBorder.swift */; };
-		BFCD4E4B1C8F8BB700F50B72 /* Shelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4E4A1C8F8BB700F50B72 /* Shelter.swift */; };
 		D013BFA51C716B7E007C8808 /* ImageGalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D013BFA41C716B7E007C8808 /* ImageGalleryView.xib */; };
 		D013BFA71C717935007C8808 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013BFA61C717935007C8808 /* ImageGalleryView.swift */; };
-		D040884B1C94B6CC00A53389 /* ThemeColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040884A1C94B6CC00A53389 /* ThemeColorExtension.swift */; };
-		D04088511C94BE8600A53389 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04088501C94BE8600A53389 /* FontExtension.swift */; };
+		D040884B1C94B6CC00A53389 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040884A1C94B6CC00A53389 /* UIColor+Theme.swift */; };
+		D04088511C94BE8600A53389 /* UIFont+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04088501C94BE8600A53389 /* UIFont+Theme.swift */; };
 		D040885C1C94BEE000A53389 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D04088521C94BEE000A53389 /* OpenSans-Bold.ttf */; };
 		D040885D1C94BEE000A53389 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D04088531C94BEE000A53389 /* OpenSans-BoldItalic.ttf */; };
 		D040885E1C94BEE000A53389 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D04088541C94BEE000A53389 /* OpenSans-ExtraBold.ttf */; };
@@ -31,10 +28,6 @@
 		D04088631C94BEE000A53389 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D04088591C94BEE000A53389 /* OpenSans-Regular.ttf */; };
 		D04088641C94BEE000A53389 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D040885A1C94BEE000A53389 /* OpenSans-Semibold.ttf */; };
 		D04088651C94BEE000A53389 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D040885B1C94BEE000A53389 /* OpenSans-SemiboldItalic.ttf */; };
-		D083E4821C9339EF00F7D1C9 /* SearchForPetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D083E4811C9339EF00F7D1C9 /* SearchForPetService.swift */; };
-		D083E4841C933A0E00F7D1C9 /* PetFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D083E4831C933A0E00F7D1C9 /* PetFilters.swift */; };
-		D083E4861C933A9700F7D1C9 /* SearchForPetResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D083E4851C933A9700F7D1C9 /* SearchForPetResult.swift */; };
-		D083E4881C933A9E00F7D1C9 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D083E4871C933A9E00F7D1C9 /* BaseResult.swift */; };
 		D0950AC81C618C2F002E198C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950AC71C618C2F002E198C /* AppDelegate.swift */; };
 		D0950ACD1C618C2F002E198C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0950ACB1C618C2F002E198C /* Main.storyboard */; };
 		D0950ACF1C618C2F002E198C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0950ACE1C618C2F002E198C /* Assets.xcassets */; };
@@ -45,14 +38,8 @@
 		D0950AFB1C619146002E198C /* PetListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950AFA1C619146002E198C /* PetListingViewController.swift */; };
 		D0950AFF1C619162002E198C /* LostPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950AFE1C619162002E198C /* LostPetViewController.swift */; };
 		D0950B011C619172002E198C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950B001C619172002E198C /* InfoViewController.swift */; };
-		D0950B041C61933F002E198C /* FindPetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950B031C61933F002E198C /* FindPetsService.swift */; };
-		D0950B071C619379002E198C /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950B061C619379002E198C /* Pet.swift */; };
-		D0950B0A1C6193C0002E198C /* FindPetsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950B091C6193C0002E198C /* FindPetsResult.swift */; };
 		D0950B0D1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950B0C1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift */; };
-		D0950B101C61A5F3002E198C /* PetImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0950B0F1C61A5F3002E198C /* PetImageCollectionViewCell.xib */; };
-		D0950B131C61A667002E198C /* PetImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950B121C61A667002E198C /* PetImageCollectionViewCell.swift */; };
 		D0E536791C70405D004794D8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E536781C70405D004794D8 /* SearchViewController.swift */; };
-		D0E5367B1C70412A004794D8 /* PetListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5367A1C70412A004794D8 /* PetListingDetailViewController.swift */; };
 		D4F2A7321D6A081F00E92647 /* PetAdoptionTransportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D4F2A7311D6A081F00E92647 /* PetAdoptionTransportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4F2A7391D6A081F00E92647 /* PetAdoptionTransportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F2A72F1D6A081F00E92647 /* PetAdoptionTransportKit.framework */; };
 		D4F2A7401D6A081F00E92647 /* PetAdoptionTransportKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F2A73F1D6A081F00E92647 /* PetAdoptionTransportKitTests.swift */; };
@@ -140,36 +127,29 @@
 
 /* Begin PBXFileReference section */
 		4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage.framework"; sourceTree = "<group>"; };
-		420FD5751D6F255A00E5DD89 /* NewPetListingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPetListingDetailVC.swift; path = Controllers/NewPetListingDetailVC.swift; sourceTree = "<group>"; };
-		42ACC1A91D689CD2001C7C83 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Placeholder.swift"; path = "Extensions/UIImage+Placeholder.swift"; sourceTree = "<group>"; };
+		420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetListingDetailVC.swift; path = Controllers/PetListingDetailVC.swift; sourceTree = "<group>"; };
 		42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = Protocols/ReusableView.swift; sourceTree = "<group>"; };
 		42BC91251D67C7DA00B3B8FD /* PetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetCell.swift; path = Views/PetCell.swift; sourceTree = "<group>"; };
-		42C252291C8881DE00B2BE6D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavBar.swift; sourceTree = "<group>"; };
-		42F179051D6C9B3800E593F5 /* UIView+TopBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+TopBorder.swift"; path = "Extensions/UIView+TopBorder.swift"; sourceTree = "<group>"; };
+		42C252291C8881DE00B2BE6D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundView.swift; path = Views/BackgroundView.swift; sourceTree = "<group>"; };
+		42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransparentNavBar.swift; path = Views/TransparentNavBar.swift; sourceTree = "<group>"; };
 		45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetAdoption_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		743003C75DF42CAE3261435B /* Pods-PetAdoption-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		925933A48637FAFF5BE6240D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7546D298D6108BB5722AD6E /* Pods-PetAdoption-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		BFCD4E4A1C8F8BB700F50B72 /* Shelter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shelter.swift; sourceTree = "<group>"; };
-		D013BFA41C716B7E007C8808 /* ImageGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGalleryView.xib; sourceTree = "<group>"; };
-		D013BFA61C717935007C8808 /* ImageGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalleryView.swift; sourceTree = "<group>"; };
-		D040884A1C94B6CC00A53389 /* ThemeColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeColorExtension.swift; sourceTree = "<group>"; };
-		D04088501C94BE8600A53389 /* FontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
-		D04088521C94BEE000A53389 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../OpenSans-Bold.ttf"; sourceTree = "<group>"; };
-		D04088531C94BEE000A53389 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "../OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		D04088541C94BEE000A53389 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "../OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
-		D04088551C94BEE000A53389 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		D04088561C94BEE000A53389 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic.ttf"; path = "../OpenSans-Italic.ttf"; sourceTree = "<group>"; };
-		D04088571C94BEE000A53389 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "../OpenSans-Light.ttf"; sourceTree = "<group>"; };
-		D04088581C94BEE000A53389 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-LightItalic.ttf"; path = "../OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
-		D04088591C94BEE000A53389 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		D040885A1C94BEE000A53389 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Semibold.ttf"; path = "../OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
-		D040885B1C94BEE000A53389 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "../OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
-		D083E4811C9339EF00F7D1C9 /* SearchForPetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchForPetService.swift; sourceTree = "<group>"; };
-		D083E4831C933A0E00F7D1C9 /* PetFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetFilters.swift; sourceTree = "<group>"; };
-		D083E4851C933A9700F7D1C9 /* SearchForPetResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchForPetResult.swift; sourceTree = "<group>"; };
-		D083E4871C933A9E00F7D1C9 /* BaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
+		D013BFA41C716B7E007C8808 /* ImageGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageGalleryView.xib; path = Nibs/ImageGalleryView.xib; sourceTree = "<group>"; };
+		D013BFA61C717935007C8808 /* ImageGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageGalleryView.swift; path = Nibs/ImageGalleryView.swift; sourceTree = "<group>"; };
+		D040884A1C94B6CC00A53389 /* UIColor+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Theme.swift"; path = "Extensions/UIColor+Theme.swift"; sourceTree = "<group>"; };
+		D04088501C94BE8600A53389 /* UIFont+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+Theme.swift"; path = "Extensions/UIFont+Theme.swift"; sourceTree = "<group>"; };
+		D04088521C94BEE000A53389 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Resources/Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		D04088531C94BEE000A53389 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "Resources/Fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		D04088541C94BEE000A53389 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "Resources/Fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		D04088551C94BEE000A53389 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBoldItalic.ttf"; path = "Resources/Fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		D04088561C94BEE000A53389 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic.ttf"; path = "Resources/Fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		D04088571C94BEE000A53389 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "Resources/Fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		D04088581C94BEE000A53389 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-LightItalic.ttf"; path = "Resources/Fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		D04088591C94BEE000A53389 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "Resources/Fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		D040885A1C94BEE000A53389 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Semibold.ttf"; path = "Resources/Fonts/OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		D040885B1C94BEE000A53389 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "Resources/Fonts/OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		D0950AC41C618C2F002E198C /* PetAdoption-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PetAdoption-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0950AC71C618C2F002E198C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0950ACC1C618C2F002E198C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -183,17 +163,11 @@
 		D0950AE71C618C2F002E198C /* PetAdoption_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAdoption_iOSUITests.swift; sourceTree = "<group>"; };
 		D0950AE91C618C2F002E198C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0950AF51C618CE4002E198C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		D0950AFA1C619146002E198C /* PetListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListingViewController.swift; sourceTree = "<group>"; };
-		D0950AFE1C619162002E198C /* LostPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LostPetViewController.swift; sourceTree = "<group>"; };
-		D0950B001C619172002E198C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		D0950B031C61933F002E198C /* FindPetsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPetsService.swift; sourceTree = "<group>"; };
-		D0950B061C619379002E198C /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
-		D0950B091C6193C0002E198C /* FindPetsResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPetsResult.swift; sourceTree = "<group>"; };
-		D0950B0C1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHomeCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		D0950B0F1C61A5F3002E198C /* PetImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PetImageCollectionViewCell.xib; sourceTree = "<group>"; };
-		D0950B121C61A667002E198C /* PetImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		D0E536781C70405D004794D8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		D0E5367A1C70412A004794D8 /* PetListingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListingDetailViewController.swift; sourceTree = "<group>"; };
+		D0950AFA1C619146002E198C /* PetListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetListingViewController.swift; path = Controllers/PetListingViewController.swift; sourceTree = "<group>"; };
+		D0950AFE1C619162002E198C /* LostPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LostPetViewController.swift; path = Controllers/LostPetViewController.swift; sourceTree = "<group>"; };
+		D0950B001C619172002E198C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = Controllers/InfoViewController.swift; sourceTree = "<group>"; };
+		D0950B0C1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomHomeCollectionViewFlowLayout.swift; path = Views/CustomHomeCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		D0E536781C70405D004794D8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controllers/SearchViewController.swift; sourceTree = "<group>"; };
 		D4F2A72F1D6A081F00E92647 /* PetAdoptionTransportKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PetAdoptionTransportKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F2A7311D6A081F00E92647 /* PetAdoptionTransportKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetAdoptionTransportKit.h; sourceTree = "<group>"; };
 		D4F2A7331D6A081F00E92647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,10 +196,10 @@
 		D4F2A7831D6A4D6100E92647 /* PTKMicrochip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTKMicrochip.swift; sourceTree = "<group>"; };
 		D4F2A7851D6A811600E92647 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		D4F2A7881D6A95E200E92647 /* PTKRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTKRequestManager.swift; sourceTree = "<group>"; };
-		D769DE391C62E9AE008C0BF8 /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
-		D769DE3B1C62EA82008C0BF8 /* LostPet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LostPet.storyboard; sourceTree = "<group>"; };
-		D769DE3D1C62EB6A008C0BF8 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		D769DE3F1C62EDB1008C0BF8 /* PetListings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PetListings.storyboard; sourceTree = "<group>"; };
+		D769DE391C62E9AE008C0BF8 /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Info.storyboard; path = Storyboards/Info.storyboard; sourceTree = "<group>"; };
+		D769DE3B1C62EA82008C0BF8 /* LostPet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LostPet.storyboard; path = Storyboards/LostPet.storyboard; sourceTree = "<group>"; };
+		D769DE3D1C62EB6A008C0BF8 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Search.storyboard; path = Storyboards/Search.storyboard; sourceTree = "<group>"; };
+		D769DE3F1C62EDB1008C0BF8 /* PetListings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PetListings.storyboard; path = Storyboards/PetListings.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,11 +259,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4206E8601D73B6E100EA3C46 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D04088521C94BEE000A53389 /* OpenSans-Bold.ttf */,
+				D04088531C94BEE000A53389 /* OpenSans-BoldItalic.ttf */,
+				D04088541C94BEE000A53389 /* OpenSans-ExtraBold.ttf */,
+				D04088551C94BEE000A53389 /* OpenSans-ExtraBoldItalic.ttf */,
+				D04088561C94BEE000A53389 /* OpenSans-Italic.ttf */,
+				D04088571C94BEE000A53389 /* OpenSans-Light.ttf */,
+				D04088581C94BEE000A53389 /* OpenSans-LightItalic.ttf */,
+				D04088591C94BEE000A53389 /* OpenSans-Regular.ttf */,
+				D040885A1C94BEE000A53389 /* OpenSans-Semibold.ttf */,
+				D040885B1C94BEE000A53389 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		42ACC1A81D689C82001C7C83 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				42ACC1A91D689CD2001C7C83 /* UIImage+Placeholder.swift */,
-				42F179051D6C9B3800E593F5 /* UIView+TopBorder.swift */,
+				D040884A1C94B6CC00A53389 /* UIColor+Theme.swift */,
+				D04088501C94BE8600A53389 /* UIFont+Theme.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +296,9 @@
 		42BC91241D67C7AF00B3B8FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D0950B0C1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift */,
+				42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */,
+				42C252291C8881DE00B2BE6D /* BackgroundView.swift */,
 				42BC91251D67C7DA00B3B8FD /* PetCell.swift */,
 			);
 			name = Views;
@@ -319,28 +313,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D04088491C94B6C200A53389 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				D040884A1C94B6CC00A53389 /* ThemeColorExtension.swift */,
-				D04088501C94BE8600A53389 /* FontExtension.swift */,
-			);
-			name = Util;
-			sourceTree = "<group>";
-		};
 		D040884F1C94BD6100A53389 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D04088521C94BEE000A53389 /* OpenSans-Bold.ttf */,
-				D04088531C94BEE000A53389 /* OpenSans-BoldItalic.ttf */,
-				D04088541C94BEE000A53389 /* OpenSans-ExtraBold.ttf */,
-				D04088551C94BEE000A53389 /* OpenSans-ExtraBoldItalic.ttf */,
-				D04088561C94BEE000A53389 /* OpenSans-Italic.ttf */,
-				D04088571C94BEE000A53389 /* OpenSans-Light.ttf */,
-				D04088581C94BEE000A53389 /* OpenSans-LightItalic.ttf */,
-				D04088591C94BEE000A53389 /* OpenSans-Regular.ttf */,
-				D040885A1C94BEE000A53389 /* OpenSans-Semibold.ttf */,
-				D040885B1C94BEE000A53389 /* OpenSans-SemiboldItalic.ttf */,
+				4206E8601D73B6E100EA3C46 /* Fonts */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -378,14 +354,10 @@
 				42ACC1AB1D68A88C001C7C83 /* Protocols */,
 				42ACC1A81D689C82001C7C83 /* Extensions */,
 				D040884F1C94BD6100A53389 /* Resources */,
-				D04088491C94B6C200A53389 /* Util */,
 				D769DE381C62E986008C0BF8 /* Storyboards */,
 				D0950B0E1C61A5D5002E198C /* Nibs */,
 				42BC91241D67C7AF00B3B8FD /* Views */,
 				D0950B0B1C619877002E198C /* CustomComponents */,
-				D0950B081C6193A6002E198C /* ServiceResults */,
-				D0950B051C619364002E198C /* Models */,
-				D0950B021C619301002E198C /* Services */,
 				D0950AF71C618D86002E198C /* ViewControllers */,
 				D0950AC71C618C2F002E198C /* AppDelegate.swift */,
 				D0950ACE1C618C2F002E198C /* Assets.xcassets */,
@@ -424,41 +396,9 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		D0950B021C619301002E198C /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D0950B031C61933F002E198C /* FindPetsService.swift */,
-				D083E4811C9339EF00F7D1C9 /* SearchForPetService.swift */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
-		D0950B051C619364002E198C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D0950B061C619379002E198C /* Pet.swift */,
-				BFCD4E4A1C8F8BB700F50B72 /* Shelter.swift */,
-				D083E4831C933A0E00F7D1C9 /* PetFilters.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		D0950B081C6193A6002E198C /* ServiceResults */ = {
-			isa = PBXGroup;
-			children = (
-				D0950B091C6193C0002E198C /* FindPetsResult.swift */,
-				D083E4851C933A9700F7D1C9 /* SearchForPetResult.swift */,
-				D083E4871C933A9E00F7D1C9 /* BaseResult.swift */,
-			);
-			name = ServiceResults;
-			sourceTree = "<group>";
-		};
 		D0950B0B1C619877002E198C /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
-				D0950B0C1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift */,
-				42C252291C8881DE00B2BE6D /* BackgroundView.swift */,
-				42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */,
 			);
 			name = CustomComponents;
 			sourceTree = "<group>";
@@ -466,8 +406,6 @@
 		D0950B0E1C61A5D5002E198C /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				D0950B0F1C61A5F3002E198C /* PetImageCollectionViewCell.xib */,
-				D0950B121C61A667002E198C /* PetImageCollectionViewCell.swift */,
 				D013BFA41C716B7E007C8808 /* ImageGalleryView.xib */,
 				D013BFA61C717935007C8808 /* ImageGalleryView.swift */,
 			);
@@ -478,8 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				D0950AFA1C619146002E198C /* PetListingViewController.swift */,
-				D0E5367A1C70412A004794D8 /* PetListingDetailViewController.swift */,
-				420FD5751D6F255A00E5DD89 /* NewPetListingDetailVC.swift */,
+				420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */,
 			);
 			name = PetListings;
 			sourceTree = "<group>";
@@ -766,7 +703,6 @@
 				D0950ACD1C618C2F002E198C /* Main.storyboard in Resources */,
 				D04088621C94BEE000A53389 /* OpenSans-LightItalic.ttf in Resources */,
 				D040885D1C94BEE000A53389 /* OpenSans-BoldItalic.ttf in Resources */,
-				D0950B101C61A5F3002E198C /* PetImageCollectionViewCell.xib in Resources */,
 				D04088641C94BEE000A53389 /* OpenSans-Semibold.ttf in Resources */,
 				D04088611C94BEE000A53389 /* OpenSans-Light.ttf in Resources */,
 				D769DE401C62EDB1008C0BF8 /* PetListings.storyboard in Resources */,
@@ -863,31 +799,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E536791C70405D004794D8 /* SearchViewController.swift in Sources */,
-				BFCD4E4B1C8F8BB700F50B72 /* Shelter.swift in Sources */,
-				D0950B071C619379002E198C /* Pet.swift in Sources */,
 				42ACC1AD1D68A8A3001C7C83 /* ReusableView.swift in Sources */,
 				42C2522C1C8899BD00B2BE6D /* TransparentNavBar.swift in Sources */,
 				42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */,
-				D0950B041C61933F002E198C /* FindPetsService.swift in Sources */,
 				D013BFA71C717935007C8808 /* ImageGalleryView.swift in Sources */,
 				42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */,
-				D0950B131C61A667002E198C /* PetImageCollectionViewCell.swift in Sources */,
 				D0950AFF1C619162002E198C /* LostPetViewController.swift in Sources */,
-				42F179061D6C9B3800E593F5 /* UIView+TopBorder.swift in Sources */,
-				D04088511C94BE8600A53389 /* FontExtension.swift in Sources */,
-				D0950B0A1C6193C0002E198C /* FindPetsResult.swift in Sources */,
+				D04088511C94BE8600A53389 /* UIFont+Theme.swift in Sources */,
 				D0950AC81C618C2F002E198C /* AppDelegate.swift in Sources */,
-				420FD5761D6F255A00E5DD89 /* NewPetListingDetailVC.swift in Sources */,
+				420FD5761D6F255A00E5DD89 /* PetListingDetailVC.swift in Sources */,
 				D0950B0D1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift in Sources */,
 				D0950AFB1C619146002E198C /* PetListingViewController.swift in Sources */,
-				D0E5367B1C70412A004794D8 /* PetListingDetailViewController.swift in Sources */,
-				D083E4881C933A9E00F7D1C9 /* BaseResult.swift in Sources */,
-				D083E4821C9339EF00F7D1C9 /* SearchForPetService.swift in Sources */,
-				42ACC1AA1D689CD2001C7C83 /* UIImage+Placeholder.swift in Sources */,
 				D0950B011C619172002E198C /* InfoViewController.swift in Sources */,
-				D040884B1C94B6CC00A53389 /* ThemeColorExtension.swift in Sources */,
-				D083E4861C933A9700F7D1C9 /* SearchForPetResult.swift in Sources */,
-				D083E4841C933A0E00F7D1C9 /* PetFilters.swift in Sources */,
+				D040884B1C94B6CC00A53389 /* UIColor+Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
