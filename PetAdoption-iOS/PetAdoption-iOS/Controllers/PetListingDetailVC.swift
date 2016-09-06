@@ -9,74 +9,47 @@
 import UIKit
 import PetAdoptionTransportKit
 
+enum Sections: Int
+{
+    case description = 0
+    case features = 1
+    case personality = 2
+    case adoptionInfo = 3
+}
+
 class PetListingDetailVC: UITableViewController
 {
+    ////////////////////////////////////////////////////////////
+    // MARK: - Typealiases
+    ////////////////////////////////////////////////////////////
+
+    typealias DictOfOptionalStrings = Dictionary<String, String?>
+    typealias ArrayofDicts = Array<DictOfOptionalStrings>
+
     ////////////////////////////////////////////////////////////
     // MARK: - IBOutlets
     ////////////////////////////////////////////////////////////
 
-    // Image View
     @IBOutlet weak var imageContainerScrollView: UIScrollView!
     @IBOutlet var imageContainerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var pageControl: UIPageControl!
 
-    // Description
-    @IBOutlet weak var descriptionLabel: UILabel!
-
-    // Features
-    @IBOutlet weak var primaryBreedLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var sizeLabel: UILabel!
-    @IBOutlet weak var neuteredLabel: UILabel!
-    @IBOutlet weak var housebrokenLabel: UILabel!
-    @IBOutlet weak var declawedLabel: UILabel!
-
-    // Personality
-    @IBOutlet weak var goodWithKidsLabel: UILabel!
-    @IBOutlet weak var goodWithDogsLabel: UILabel!
-    @IBOutlet weak var goodWithCatsLabel: UILabel!
-
-    // Adoption Info
-    @IBOutlet weak var intakeDateLabel: UILabel!
-    
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
-    var descriptionSection = [String : String?]()
-    var featuresSection = [String : String?]()
-    var personalitySection = [String : String?]()
-    var adoptionInfoSection = [String : String?]()
+    var descriptionSection = ArrayofDicts()
+    var featuresSection = ArrayofDicts()
+    var personalitySection = ArrayofDicts()
+    var adoptionInfoSection = ArrayofDicts()
+    var dataSource = [ArrayofDicts]()
+    var images = [String]()
+
     var pet: PTKPet!
     {
         didSet
         {
-            descriptionSection["Description"] = pet.description
-
-            featuresSection["Breed"] = pet.primaryBreed
-            featuresSection["Gender"] = pet.gender.rawValue
-            featuresSection["Age"] = pet.age.description
-            featuresSection["Weight"] = pet.size
-            featuresSection["Neutered"] = pet.isSpayed ? "Yes" : "No"
-            featuresSection["Housebroken"] = pet.houseTrained.rawValue
-            featuresSection["Declawed"] = pet.declawed.rawValue
-
-            personalitySection["Good with Kids"] = pet.isGoodWithKids ? "Yes" : "No"
-            personalitySection["Good with Dogs"] = pet.isGoodWithDogs ? "Yes" : "No"
-            personalitySection["Good with Cats"] = pet.isGoodWithCats ? "Yes" : "No"
-
-            if let intakeDate = self.pet.intakeDate
-            {
-                let formatter = NSDateFormatter()
-                formatter.dateStyle = .LongStyle
-                adoptionInfoSection["Adoptable Since"] = formatter.stringFromDate(intakeDate)
-            }
-            else
-            {
-                adoptionInfoSection["Adoptable Since"] = "Unknown"
-            }
-
+            configureView()
         }
     }
 
@@ -87,9 +60,8 @@ class PetListingDetailVC: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        self.pageControl.numberOfPages = self.pet.imageURLPaths.count
         self.tableView.backgroundColor = UIColor.themePrimaryColor()
-        configureView()
     }
 
     ////////////////////////////////////////////////////////////
@@ -108,40 +80,59 @@ class PetListingDetailVC: UITableViewController
     func configureView()
     {
         self.title = self.pet.name
-        self.pageControl.numberOfPages = self.pet.imageURLPaths.count
-        self.descriptionLabel.text = self.pet.description
 
-        self.primaryBreedLabel.text = self.pet.primaryBreed
-        self.genderLabel.text = self.pet.gender.rawValue
-        self.ageLabel.text = self.pet.age.description
-        self.sizeLabel.text = self.pet.size
-        self.neuteredLabel.text = self.pet.isSpayed ? "Yes" : "No"
-        self.housebrokenLabel.text = self.pet.houseTrained.rawValue
-        self.declawedLabel.text = self.pet.declawed.rawValue
+        self.descriptionSection =
+        [
+            ["name" : "Description", "value" : self.pet.description]
+        ]
 
-        self.goodWithKidsLabel.text = self.pet.isGoodWithKids ? "Yes" : "No"
-        self.goodWithDogsLabel.text = self.pet.isGoodWithDogs ? "Yes" : "No"
-        self.goodWithCatsLabel.text = self.pet.isGoodWithCats ? "Yes" : "No"
+        self.featuresSection =
+        [
+            ["name" : "Breed", "value" : self.pet.primaryBreed],
+            ["name" : "Gender", "value" : self.pet.gender.rawValue],
+            ["name" : "Age", "value" : self.pet.age.description],
+            ["name" : "Weight", "value" : self.pet.size],
+            ["name" : "Spayed/Neutered", "value" : self.pet.isSpayed ? "Yes" : "No"],
+            ["name" : "Housebroken", "value" : self.pet.houseTrained.rawValue],
+            ["name" : "Declawed", "value" : self.pet.declawed.rawValue]
+        ]
 
+        self.personalitySection =
+        [
+            ["name" : "Good with Kids", "value" : self.pet.isGoodWithKids ? "Yes" : "No"],
+            ["name" : "Good with Dogs", "value" : self.pet.isGoodWithDogs ? "Yes" : "No"],
+            ["name" : "Good with Cats", "value" : self.pet.isGoodWithCats ? "Yes" : "No"]
+        ]
+
+        var intakeDateString = ""
         if let intakeDate = self.pet.intakeDate
         {
             let formatter = NSDateFormatter()
             formatter.dateStyle = .LongStyle
-            self.intakeDateLabel.text = formatter.stringFromDate(intakeDate)
+            intakeDateString = formatter.stringFromDate(intakeDate)
         }
         else
         {
-            self.intakeDateLabel.text = "Unknown"
+            intakeDateString = "Unknown"
         }
 
-        print(featuresSection)
-        print(personalitySection)
-        print(adoptionInfoSection)
+        self.adoptionInfoSection =
+        [
+            ["name" : "Adoptable Since", "value" : intakeDateString]
+        ]
+
+        self.dataSource =
+        [
+            self.descriptionSection,
+            self.featuresSection,
+            self.personalitySection,
+            self.adoptionInfoSection
+        ]
     }
 
     ////////////////////////////////////////////////////////////
 
-    private func displayImages()
+    func displayImages()
     {
         self.imageContainerScrollView.setNeedsLayout()
         self.imageContainerScrollView.layoutIfNeeded()
@@ -166,22 +157,6 @@ class PetListingDetailVC: UITableViewController
 
         self.imageContainerScrollView.contentSize = CGSizeMake(fullWidth, self.imageContainerScrollView.frame.height)
     }
-    
-    ////////////////////////////////////////////////////////////
-    // MARK: - UITableViewDelegate
-    ////////////////////////////////////////////////////////////
-
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
-    {
-        return 100.0
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
-    {
-        return UITableViewAutomaticDimension
-    }
 
     ////////////////////////////////////////////////////////////
     // MARK: - UIScrollViewDelegate
@@ -199,6 +174,98 @@ class PetListingDetailVC: UITableViewController
             let page = Int(offset) / widthOfIndividualItems
 
             self.pageControl.currentPage = page
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - UITableViewDelegate
+    ////////////////////////////////////////////////////////////
+
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 46.0
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return UITableViewAutomaticDimension
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - UITableViewDataSource
+    ////////////////////////////////////////////////////////////
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return self.dataSource.count
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        switch section
+        {
+            case Sections.description.rawValue:
+                return self.descriptionSection.count
+            case Sections.features.rawValue:
+                return self.featuresSection.count
+            case Sections.personality.rawValue:
+                return self.personalitySection.count
+            case Sections.adoptionInfo.rawValue:
+                return self.adoptionInfoSection.count
+            default:
+                return 0
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let sectionNumber = indexPath.section
+        let rowNumber = indexPath.row
+
+        let dict = self.dataSource[sectionNumber][rowNumber]
+
+        switch (sectionNumber)
+        {
+            case Sections.description.rawValue:
+                if let descriptionCell = tableView.dequeueReusableCellWithIdentifier(DescriptionCell.reuseIdentifier) as? DescriptionCell
+                {
+                    descriptionCell.descriptionLabel.text = dict["value"] ?? ""
+                    return descriptionCell
+                }
+            default:
+                if let normalCell = tableView.dequeueReusableCellWithIdentifier("NormalCell")
+                {
+                    normalCell.textLabel?.text = dict["name"] ?? ""
+                    normalCell.detailTextLabel?.text = dict["value"] ?? ""
+                    return normalCell
+                }
+        }
+
+        return UITableViewCell()
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+        switch (section)
+        {
+            case Sections.description.rawValue:
+                return nil
+            case Sections.features.rawValue:
+                return "Features"
+            case Sections.personality.rawValue:
+                return "Personality"
+            case Sections.adoptionInfo.rawValue:
+                return "Adoption Information"
+            default:
+                return nil
         }
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F8515E21C6CBD100FACB0F6 /* Pods_PetAdoption_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */; };
 		4200BBCD1D6BCFD1003C00A7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */; };
+		42070E091D7470A100B02BA2 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42070E081D7470A100B02BA2 /* DescriptionCell.swift */; };
 		420FD5761D6F255A00E5DD89 /* PetListingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */; };
 		42ACC1AD1D68A8A3001C7C83 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */; };
 		42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC91251D67C7DA00B3B8FD /* PetCell.swift */; };
@@ -127,6 +128,7 @@
 
 /* Begin PBXFileReference section */
 		4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage.framework"; sourceTree = "<group>"; };
+		42070E081D7470A100B02BA2 /* DescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionCell.swift; path = Views/DescriptionCell.swift; sourceTree = "<group>"; };
 		420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetListingDetailVC.swift; path = Controllers/PetListingDetailVC.swift; sourceTree = "<group>"; };
 		42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = Protocols/ReusableView.swift; sourceTree = "<group>"; };
 		42BC91251D67C7DA00B3B8FD /* PetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetCell.swift; path = Views/PetCell.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */,
 				42C252291C8881DE00B2BE6D /* BackgroundView.swift */,
 				42BC91251D67C7DA00B3B8FD /* PetCell.swift */,
+				42070E081D7470A100B02BA2 /* DescriptionCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				42ACC1AD1D68A8A3001C7C83 /* ReusableView.swift in Sources */,
 				42C2522C1C8899BD00B2BE6D /* TransparentNavBar.swift in Sources */,
 				42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */,
+				42070E091D7470A100B02BA2 /* DescriptionCell.swift in Sources */,
 				D013BFA71C717935007C8808 /* ImageGalleryView.swift in Sources */,
 				42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */,
 				D0950AFF1C619162002E198C /* LostPetViewController.swift in Sources */,
