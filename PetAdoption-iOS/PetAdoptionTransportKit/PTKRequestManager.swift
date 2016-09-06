@@ -21,6 +21,8 @@ public typealias PTKRequestPetsComplete = (pets: [PTKPet]?, error: NSError?) -> 
 public typealias PTKRequestImageComplete = (image: UIImage?, error: NSError?) -> Void
 
 public class PTKRequestManager: NSObject {
+
+    let imageCache = AutoPurgingImageCache()
     
     public class func sharedInstance() -> PTKRequestManager {
         return PTKSharedInstance
@@ -86,20 +88,27 @@ public class PTKRequestManager: NSObject {
         }
     }
     
-    public func request(imageAtPath aPath: String, completion complete: PTKRequestImageComplete) -> Request {
-        return Alamofire.request(.GET, aPath).responseImage { (response: Response<Image, NSError>) in
-            if response.result.isSuccess {
-                guard let image = response.result.value else {
-                    let error = NSError(domain: "com.petadoption.petadoptiontransportkit.requestimage", code: 2, userInfo: ["Data":"response was a success, but data is missing", "url":aPath])
-                    complete(image: nil, error: error)
-                    return
+    public func request(imageAtPath aPath: String, completion complete: PTKRequestImageComplete) -> Request? {
+        
+        if let cachedImage = self.imageCache.imageWithIdentifier(aPath) {
+            complete(image: cachedImage, error: nil)
+            return nil
+        } else {
+            return Alamofire.request(.GET, aPath).responseImage { (response: Response<Image, NSError>) in
+                if response.result.isSuccess {
+                    guard let image = response.result.value else {
+                        let error = NSError(domain: "com.petadoption.petadoptiontransportkit.requestimage", code: 2, userInfo: ["Data":"response was a success, but data is missing", "url":aPath])
+                        complete(image: nil, error: error)
+                        return
+                    }
+                    
+                    self.imageCache.addImage(image, withIdentifier: aPath)
+                    complete(image: image, error: response.result.error)
+                } else {
+                    complete(image: nil, error: response.result.error)
                 }
-                
-                complete(image: image, error: response.result.error)
-            } else {
-                complete(image: nil, error: response.result.error)
             }
+            
         }
     }
-    
 }

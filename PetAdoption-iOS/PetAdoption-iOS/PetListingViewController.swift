@@ -32,7 +32,7 @@ class PetListingViewController: UIViewController
     var petData = [PTKPet]()
     var viewControllerTitle = "Home"
     let requestManager = PTKRequestManager.sharedInstance()
-    let imageCache = AutoPurgingImageCache()
+
     let refreshControl = UIRefreshControl()
 
     ////////////////////////////////////////////////////////////
