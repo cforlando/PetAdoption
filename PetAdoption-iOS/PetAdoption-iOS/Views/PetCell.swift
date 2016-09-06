@@ -70,7 +70,7 @@ public class PetCell: UICollectionViewCell, ReusableView
     {
         self.activityIndicator.startAnimating()
 
-        if let imageUrl = self.pet?.imageURLPaths[0]
+        if let imageUrl = self.pet?.imageURLPaths.first
         {
             self.request = PTKRequestManager.sharedInstance().request(imageAtPath: imageUrl)
             { image, error in

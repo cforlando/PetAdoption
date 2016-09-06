@@ -9,6 +9,7 @@
 import UIKit
 import Toast_Swift
 import PetAdoptionTransportKit
+import AlamofireImage
 
 class PetListingViewController: UIViewController
 {
@@ -32,6 +33,8 @@ class PetListingViewController: UIViewController
     var viewControllerTitle = "Home"
     let requestManager = PTKRequestManager.sharedInstance()
 
+    let refreshControl = UIRefreshControl()
+
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
     ////////////////////////////////////////////////////////////
@@ -39,37 +42,25 @@ class PetListingViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.collectionView.alwaysBounceVertical = true
         self.collectionView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         self.collectionView.collectionViewLayout = CustomHomeCollectionViewFlowLayout()
+        
+        refreshControl.addTarget(self, action: #selector(refreshTriggered), forControlEvents: .ValueChanged)
+        self.collectionView.addSubview(refreshControl)
+        
+        loadPets()
 
-        requestManager.request(AllPetsWithcompletion:
-        { pets, error in
-            if let error = error
-            {
-                self.view.makeToast(error.localizedDescription)
-            }
-            else
-            {
-                if let pets = pets
-                {
-                    self.petData = pets
-                    self.collectionView.reloadData()
-                }
-            }
-        })
     }
-
-    ////////////////////////////////////////////////////////////
 
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
         self.navigationItem.title = NSLocalizedString("Town Of Lady Lake", comment: "")
     }
-
-    ////////////////////////////////////////////////////////////
 
     override func viewWillDisappear(animated: Bool)
     {
@@ -90,6 +81,32 @@ class PetListingViewController: UIViewController
             vc.pet = self.petData[indexPath.row]
         }
     }
+    
+    // Helper methods
+    func loadPets() {
+        requestManager.request(AllPetsWithcompletion:
+            { pets, error in
+                if let error = error
+                {
+                    self.view.makeToast(error.localizedDescription)
+                }
+                else
+                {
+                    if let pets = pets
+                    {
+                        self.petData = pets
+                        self.collectionView.reloadData()
+                    }
+                }
+                
+                self.refreshControl.endRefreshing()
+        })
+    }
+    
+    func refreshTriggered() {
+        loadPets()
+    }
+
 }
 
 ////////////////////////////////////////////////////////////
