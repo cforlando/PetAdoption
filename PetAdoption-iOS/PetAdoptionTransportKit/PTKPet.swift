@@ -65,7 +65,7 @@ public struct PTKPet: SpecieDetails, Behavior, Medical, Location, CustomStringCo
     public let gender: PTKGender
     public let hairLength: String
     public let houseTrained: PTKHouseTrained
-    public let imageURLPaths: [String]
+    public let imageURLPaths: Set<String>
     public let intakeDate: NSDate?
     public let isGoodWithCats: Bool
     public let isGoodWithDogs: Bool
@@ -96,6 +96,7 @@ public struct PTKPet: SpecieDetails, Behavior, Medical, Location, CustomStringCo
         let latitudes = json[PTKLostGeoLatKey] as? [CLLocationDegrees]
         let longitudes = json[PTKLostGeoLonKey] as? [CLLocationDegrees]
         let wormStatus = json[PTKHeartwormTestStatusKey] as? String ?? "" // Until a test is available with this info, it will always be nil
+        let imageURLPaths = json[PTKImagesKey] as? [String] ?? []
         
         // property initialisation
         self.activityLevel = PTKActivityLevel(rawValue: activity) ?? .Unknown
@@ -107,7 +108,7 @@ public struct PTKPet: SpecieDetails, Behavior, Medical, Location, CustomStringCo
         self.gender = PTKGender(rawValue: gender) ?? .Unknown
         self.hairLength = json[PTKHairLengthKey] as? String ?? ""
         self.houseTrained = PTKHouseTrained(rawValue: houseTrainedString) ?? .Unknown
-        self.imageURLPaths = json[PTKImagesKey] as? [String] ?? []
+        self.imageURLPaths = Set<String>(imageURLPaths)
         self.intakeDate = NSDateFormatter.ISO8601Formatter().dateFromString(date)
         self.isGoodWithCats = json[PTKGoodWithCatsKey] as? Bool ?? false
         self.isGoodWithDogs = json[PTKGoodWithDogsKey] as? Bool ?? false
