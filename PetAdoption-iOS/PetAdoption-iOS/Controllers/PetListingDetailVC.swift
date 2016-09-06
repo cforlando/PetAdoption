@@ -11,21 +11,24 @@ import PetAdoptionTransportKit
 
 enum Sections: Int
 {
-    case description = 0
-    case features = 1
-    case personality = 2
-    case adoptionInfo = 3
+    case description
+    case features
+    case personality
+    case adoptionInfo
 }
+
+////////////////////////////////////////////////////////////
+
+struct SectionItem
+{
+    var name: String
+    var value: String?
+}
+
+////////////////////////////////////////////////////////////
 
 class PetListingDetailVC: UITableViewController
 {
-    ////////////////////////////////////////////////////////////
-    // MARK: - Typealiases
-    ////////////////////////////////////////////////////////////
-
-    typealias DictOfOptionalStrings = Dictionary<String, String?>
-    typealias ArrayofDicts = Array<DictOfOptionalStrings>
-
     ////////////////////////////////////////////////////////////
     // MARK: - IBOutlets
     ////////////////////////////////////////////////////////////
@@ -38,14 +41,15 @@ class PetListingDetailVC: UITableViewController
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
-    var descriptionSection = ArrayofDicts()
-    var featuresSection = ArrayofDicts()
-    var personalitySection = ArrayofDicts()
-    var adoptionInfoSection = ArrayofDicts()
-    var dataSource = [ArrayofDicts]()
+    let estimatedRowHeight: CGFloat = 46.0
+    var descriptionSection = [SectionItem]()
+    var featuresSection = [SectionItem]()
+    var personalitySection = [SectionItem]()
+    var adoptionInfoSection = [SectionItem]()
+    var dataSource = [[SectionItem]]()
     var images = [String]()
 
-    var pet: PTKPet!
+    var pet: PTKPet?
     {
         didSet
         {
@@ -60,7 +64,7 @@ class PetListingDetailVC: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.pageControl.numberOfPages = self.pet.imageURLPaths.count
+        self.pageControl.numberOfPages = self.pet?.imageURLPaths.count ?? 0
         self.tableView.backgroundColor = UIColor.themePrimaryColor()
     }
 
@@ -79,33 +83,38 @@ class PetListingDetailVC: UITableViewController
 
     func configureView()
     {
-        self.title = self.pet.name
+        guard let pet = self.pet else
+        {
+            return
+        }
+
+        self.title = pet.name
 
         self.descriptionSection =
         [
-            ["name" : "Description", "value" : self.pet.description]
+            SectionItem(name: "Description", value: pet.description)
         ]
 
         self.featuresSection =
         [
-            ["name" : "Breed", "value" : self.pet.primaryBreed],
-            ["name" : "Gender", "value" : self.pet.gender.rawValue],
-            ["name" : "Age", "value" : self.pet.age.description],
-            ["name" : "Weight", "value" : self.pet.size],
-            ["name" : "Spayed/Neutered", "value" : self.pet.isSpayed ? "Yes" : "No"],
-            ["name" : "Housebroken", "value" : self.pet.houseTrained.rawValue],
-            ["name" : "Declawed", "value" : self.pet.declawed.rawValue]
+            SectionItem(name: "Breed", value: pet.primaryBreed),
+            SectionItem(name: "Gender", value: pet.gender.rawValue),
+            SectionItem(name: "Age", value: pet.age.description),
+            SectionItem(name: "Weight", value: pet.size),
+            SectionItem(name: "Spayed/Neutered", value: pet.isSpayed ? "Yes" : "No"),
+            SectionItem(name: "Housebroken", value: pet.houseTrained.rawValue),
+            SectionItem(name: "Declawed", value: pet.declawed.rawValue)
         ]
 
         self.personalitySection =
         [
-            ["name" : "Good with Kids", "value" : self.pet.isGoodWithKids ? "Yes" : "No"],
-            ["name" : "Good with Dogs", "value" : self.pet.isGoodWithDogs ? "Yes" : "No"],
-            ["name" : "Good with Cats", "value" : self.pet.isGoodWithCats ? "Yes" : "No"]
+            SectionItem(name: "Good with Kids", value: pet.isGoodWithKids ? "Yes" : "No"),
+            SectionItem(name: "Good with Dogs", value: pet.isGoodWithDogs ? "Yes" : "No"),
+            SectionItem(name: "Good with Cats", value: pet.isGoodWithCats ? "Yes" : "No")
         ]
 
         var intakeDateString = ""
-        if let intakeDate = self.pet.intakeDate
+        if let intakeDate = pet.intakeDate
         {
             let formatter = NSDateFormatter()
             formatter.dateStyle = .LongStyle
@@ -118,7 +127,7 @@ class PetListingDetailVC: UITableViewController
 
         self.adoptionInfoSection =
         [
-            ["name" : "Adoptable Since", "value" : intakeDateString]
+            SectionItem(name: "Adoptable Since", value: intakeDateString)
         ]
 
         self.dataSource =
@@ -134,14 +143,19 @@ class PetListingDetailVC: UITableViewController
 
     func displayImages()
     {
+        guard let pet = self.pet else
+        {
+            return
+        }
+
         self.imageContainerScrollView.setNeedsLayout()
         self.imageContainerScrollView.layoutIfNeeded()
 
         self.imageContainerViewHeightConstraint.constant = self.imageContainerScrollView.frame.width * 0.6
 
-        let fullWidth : CGFloat = CGFloat(self.pet.imageURLPaths.count) * self.imageContainerScrollView.frame.width
+        let fullWidth : CGFloat = CGFloat(pet.imageURLPaths.count ?? 0) * self.imageContainerScrollView.frame.width
 
-        for (index, petImageUrl) in self.pet.imageURLPaths.enumerate()
+        for (index, petImageUrl) in pet.imageURLPaths.enumerate()
         {
             let xOffset = self.imageContainerScrollView.frame.width * CGFloat(index)
 
@@ -166,7 +180,7 @@ class PetListingDetailVC: UITableViewController
     {
         if (scrollView == self.imageContainerScrollView)
         {
-            let numberOfPages = self.pet.imageURLPaths.count
+            let numberOfPages = self.pet?.imageURLPaths.count ?? 0
             let fullContentWidth = scrollView.contentSize.width
             let widthOfIndividualItems = Int(fullContentWidth / CGFloat(numberOfPages))
 
@@ -183,7 +197,7 @@ class PetListingDetailVC: UITableViewController
 
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        return 46.0
+        return self.estimatedRowHeight
     }
 
     ////////////////////////////////////////////////////////////
@@ -228,21 +242,21 @@ class PetListingDetailVC: UITableViewController
         let sectionNumber = indexPath.section
         let rowNumber = indexPath.row
 
-        let dict = self.dataSource[sectionNumber][rowNumber]
+        let item = self.dataSource[sectionNumber][rowNumber]
 
         switch (sectionNumber)
         {
             case Sections.description.rawValue:
                 if let descriptionCell = tableView.dequeueReusableCellWithIdentifier(DescriptionCell.reuseIdentifier) as? DescriptionCell
                 {
-                    descriptionCell.descriptionLabel.text = dict["value"] ?? ""
+                    descriptionCell.descriptionLabel.text = item.value ?? ""
                     return descriptionCell
                 }
             default:
                 if let normalCell = tableView.dequeueReusableCellWithIdentifier("NormalCell")
                 {
-                    normalCell.textLabel?.text = dict["name"] ?? ""
-                    normalCell.detailTextLabel?.text = dict["value"] ?? ""
+                    normalCell.textLabel?.text = item.name ?? ""
+                    normalCell.detailTextLabel?.text = item.value ?? ""
                     return normalCell
                 }
         }
