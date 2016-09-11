@@ -1,5 +1,5 @@
 //
-//  CustomHomeCollectionViewFlowLayout.swift
+//  HomePortraitCollectionViewLayout.swift
 //  PetAdoption-iOS
 //
 //  Created by Marco Ledesma on 2/2/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomHomeCollectionViewFlowLayout: UICollectionViewFlowLayout
+class HomePortraitCollectionViewLayout: UICollectionViewFlowLayout
 {
     ////////////////////////////////////////////////////////////
     // MARK: - Properties

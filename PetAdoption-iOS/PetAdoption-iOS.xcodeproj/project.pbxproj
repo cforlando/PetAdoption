@@ -11,6 +11,7 @@
 		4200BBCD1D6BCFD1003C00A7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */; };
 		42070E091D7470A100B02BA2 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42070E081D7470A100B02BA2 /* DescriptionCell.swift */; };
 		420FD5761D6F255A00E5DD89 /* PetListingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */; };
+		428A90A91D8441D5006B4259 /* HomeLandscapeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A90A81D8441D5006B4259 /* HomeLandscapeCollectionViewLayout.swift */; };
 		42ACC1AD1D68A8A3001C7C83 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */; };
 		42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC91251D67C7DA00B3B8FD /* PetCell.swift */; };
 		42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C252291C8881DE00B2BE6D /* BackgroundView.swift */; };
@@ -39,7 +40,7 @@
 		D0950AFB1C619146002E198C /* PetListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950AFA1C619146002E198C /* PetListingViewController.swift */; };
 		D0950AFF1C619162002E198C /* LostPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950AFE1C619162002E198C /* LostPetViewController.swift */; };
 		D0950B011C619172002E198C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950B001C619172002E198C /* InfoViewController.swift */; };
-		D0950B0D1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950B0C1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift */; };
+		D0950B0D1C6198C2002E198C /* HomePortraitCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950B0C1C6198C2002E198C /* HomePortraitCollectionViewLayout.swift */; };
 		D0E536791C70405D004794D8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E536781C70405D004794D8 /* SearchViewController.swift */; };
 		D4F2A7321D6A081F00E92647 /* PetAdoptionTransportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D4F2A7311D6A081F00E92647 /* PetAdoptionTransportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4F2A7391D6A081F00E92647 /* PetAdoptionTransportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F2A72F1D6A081F00E92647 /* PetAdoptionTransportKit.framework */; };
@@ -130,6 +131,7 @@
 		4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage.framework"; sourceTree = "<group>"; };
 		42070E081D7470A100B02BA2 /* DescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionCell.swift; path = Views/DescriptionCell.swift; sourceTree = "<group>"; };
 		420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetListingDetailVC.swift; path = Controllers/PetListingDetailVC.swift; sourceTree = "<group>"; };
+		428A90A81D8441D5006B4259 /* HomeLandscapeCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeLandscapeCollectionViewLayout.swift; path = Views/HomeLandscapeCollectionViewLayout.swift; sourceTree = "<group>"; };
 		42ACC1AC1D68A8A3001C7C83 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = Protocols/ReusableView.swift; sourceTree = "<group>"; };
 		42BC91251D67C7DA00B3B8FD /* PetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetCell.swift; path = Views/PetCell.swift; sourceTree = "<group>"; };
 		42C252291C8881DE00B2BE6D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundView.swift; path = Views/BackgroundView.swift; sourceTree = "<group>"; };
@@ -168,7 +170,7 @@
 		D0950AFA1C619146002E198C /* PetListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetListingViewController.swift; path = Controllers/PetListingViewController.swift; sourceTree = "<group>"; };
 		D0950AFE1C619162002E198C /* LostPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LostPetViewController.swift; path = Controllers/LostPetViewController.swift; sourceTree = "<group>"; };
 		D0950B001C619172002E198C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = Controllers/InfoViewController.swift; sourceTree = "<group>"; };
-		D0950B0C1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomHomeCollectionViewFlowLayout.swift; path = Views/CustomHomeCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		D0950B0C1C6198C2002E198C /* HomePortraitCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePortraitCollectionViewLayout.swift; path = Views/HomePortraitCollectionViewLayout.swift; sourceTree = "<group>"; };
 		D0E536781C70405D004794D8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controllers/SearchViewController.swift; sourceTree = "<group>"; };
 		D4F2A72F1D6A081F00E92647 /* PetAdoptionTransportKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PetAdoptionTransportKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F2A7311D6A081F00E92647 /* PetAdoptionTransportKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetAdoptionTransportKit.h; sourceTree = "<group>"; };
@@ -298,11 +300,12 @@
 		42BC91241D67C7AF00B3B8FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D0950B0C1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift */,
+				D0950B0C1C6198C2002E198C /* HomePortraitCollectionViewLayout.swift */,
 				42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */,
 				42C252291C8881DE00B2BE6D /* BackgroundView.swift */,
 				42BC91251D67C7DA00B3B8FD /* PetCell.swift */,
 				42070E081D7470A100B02BA2 /* DescriptionCell.swift */,
+				428A90A81D8441D5006B4259 /* HomeLandscapeCollectionViewLayout.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -812,7 +815,8 @@
 				D04088511C94BE8600A53389 /* UIFont+Theme.swift in Sources */,
 				D0950AC81C618C2F002E198C /* AppDelegate.swift in Sources */,
 				420FD5761D6F255A00E5DD89 /* PetListingDetailVC.swift in Sources */,
-				D0950B0D1C6198C2002E198C /* CustomHomeCollectionViewFlowLayout.swift in Sources */,
+				428A90A91D8441D5006B4259 /* HomeLandscapeCollectionViewLayout.swift in Sources */,
+				D0950B0D1C6198C2002E198C /* HomePortraitCollectionViewLayout.swift in Sources */,
 				D0950AFB1C619146002E198C /* PetListingViewController.swift in Sources */,
 				D0950B011C619172002E198C /* InfoViewController.swift in Sources */,
 				D040884B1C94B6CC00A53389 /* UIColor+Theme.swift in Sources */,
