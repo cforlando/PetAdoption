@@ -301,11 +301,11 @@
 			isa = PBXGroup;
 			children = (
 				D0950B0C1C6198C2002E198C /* HomePortraitCollectionViewLayout.swift */,
+				428A90A81D8441D5006B4259 /* HomeLandscapeCollectionViewLayout.swift */,
 				42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */,
 				42C252291C8881DE00B2BE6D /* BackgroundView.swift */,
 				42BC91251D67C7DA00B3B8FD /* PetCell.swift */,
 				42070E081D7470A100B02BA2 /* DescriptionCell.swift */,
-				428A90A81D8441D5006B4259 /* HomeLandscapeCollectionViewLayout.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";

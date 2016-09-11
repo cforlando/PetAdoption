@@ -78,8 +78,7 @@ class PetListingViewController: UIViewController
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
 
         let currentOrientation = UIDevice.currentDevice().orientation
-        let isLandscape = (currentOrientation == .LandscapeLeft) || (currentOrientation == .LandscapeRight)
-        let newLayout = isLandscape ? HomeLandscapeCollectionViewLayout() : HomePortraitCollectionViewLayout()
+        let newLayout = UIDeviceOrientationIsLandscape(currentOrientation) ? HomeLandscapeCollectionViewLayout() : HomePortraitCollectionViewLayout()
 
         coordinator.animateAlongsideTransition(nil)
         { context in

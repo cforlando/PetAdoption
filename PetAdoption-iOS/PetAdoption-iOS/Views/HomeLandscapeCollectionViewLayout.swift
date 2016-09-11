@@ -15,12 +15,8 @@ class HomeLandscapeCollectionViewLayout: UICollectionViewFlowLayout
     ////////////////////////////////////////////////////////////
 
     override var itemSize: CGSize
-        {
-        set
-        {
-
-        }
-
+    {
+        set { }
         get
         {
             let itemWidth = CGRectGetWidth(self.collectionView!.frame) / 3.0;
@@ -35,7 +31,7 @@ class HomeLandscapeCollectionViewLayout: UICollectionViewFlowLayout
     override init()
     {
         super.init()
-        setupLayout()
+        self.setupLayout()
     }
 
     ////////////////////////////////////////////////////////////
@@ -43,15 +39,15 @@ class HomeLandscapeCollectionViewLayout: UICollectionViewFlowLayout
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
-        setupLayout()
+        self.setupLayout()
     }
 
     ////////////////////////////////////////////////////////////
 
     func setupLayout()
     {
-        minimumInteritemSpacing = 0
-        minimumLineSpacing = 0
-        scrollDirection = .Vertical
+        self.minimumInteritemSpacing = 0
+        self.minimumLineSpacing = 0
+        self.scrollDirection = .Vertical
     }
 }
