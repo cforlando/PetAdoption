@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F8515E21C6CBD100FACB0F6 /* Pods_PetAdoption_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */; };
 		4200BBCD1D6BCFD1003C00A7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */; };
 		42070E091D7470A100B02BA2 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42070E081D7470A100B02BA2 /* DescriptionCell.swift */; };
 		420FD5761D6F255A00E5DD89 /* PetListingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */; };
@@ -16,6 +15,7 @@
 		42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC91251D67C7DA00B3B8FD /* PetCell.swift */; };
 		42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C252291C8881DE00B2BE6D /* BackgroundView.swift */; };
 		42C2522C1C8899BD00B2BE6D /* TransparentNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */; };
+		CF1BEE2249739EED9B62E35A /* Pods_PetAdoption_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E03CB38656D2AADF7FD0D71 /* Pods_PetAdoption_iOS.framework */; };
 		D013BFA51C716B7E007C8808 /* ImageGalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D013BFA41C716B7E007C8808 /* ImageGalleryView.xib */; };
 		D013BFA71C717935007C8808 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013BFA61C717935007C8808 /* ImageGalleryView.swift */; };
 		D040884B1C94B6CC00A53389 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040884A1C94B6CC00A53389 /* UIColor+Theme.swift */; };
@@ -73,6 +73,7 @@
 		D769DE3C1C62EA82008C0BF8 /* LostPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D769DE3B1C62EA82008C0BF8 /* LostPet.storyboard */; };
 		D769DE3E1C62EB6A008C0BF8 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D769DE3D1C62EB6A008C0BF8 /* Search.storyboard */; };
 		D769DE401C62EDB1008C0BF8 /* PetListings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D769DE3F1C62EDB1008C0BF8 /* PetListings.storyboard */; };
+		FDD40C5BEE87EE113F867071 /* Pods_PetAdoptionTransportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34B1B2CC4D5F7F38117E25A /* Pods_PetAdoptionTransportKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1FA3167A2ABE26FB9A8D9C7B /* Pods-PetAdoption-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage.framework"; sourceTree = "<group>"; };
 		42070E081D7470A100B02BA2 /* DescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionCell.swift; path = Views/DescriptionCell.swift; sourceTree = "<group>"; };
 		420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetListingDetailVC.swift; path = Controllers/PetListingDetailVC.swift; sourceTree = "<group>"; };
@@ -136,10 +138,10 @@
 		42BC91251D67C7DA00B3B8FD /* PetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetCell.swift; path = Views/PetCell.swift; sourceTree = "<group>"; };
 		42C252291C8881DE00B2BE6D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundView.swift; path = Views/BackgroundView.swift; sourceTree = "<group>"; };
 		42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransparentNavBar.swift; path = Views/TransparentNavBar.swift; sourceTree = "<group>"; };
-		45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetAdoption_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		743003C75DF42CAE3261435B /* Pods-PetAdoption-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		62223EE9A6D916E962564C15 /* Pods-PetAdoptionTransportKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoptionTransportKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoptionTransportKit/Pods-PetAdoptionTransportKit.debug.xcconfig"; sourceTree = "<group>"; };
+		8E03CB38656D2AADF7FD0D71 /* Pods_PetAdoption_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetAdoption_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		925933A48637FAFF5BE6240D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7546D298D6108BB5722AD6E /* Pods-PetAdoption-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		9ED513E182EC3E0D411D3010 /* Pods-PetAdoption-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D013BFA41C716B7E007C8808 /* ImageGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageGalleryView.xib; path = Nibs/ImageGalleryView.xib; sourceTree = "<group>"; };
 		D013BFA61C717935007C8808 /* ImageGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageGalleryView.swift; path = Nibs/ImageGalleryView.swift; sourceTree = "<group>"; };
 		D040884A1C94B6CC00A53389 /* UIColor+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Theme.swift"; path = "Extensions/UIColor+Theme.swift"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		D0950B001C619172002E198C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = Controllers/InfoViewController.swift; sourceTree = "<group>"; };
 		D0950B0C1C6198C2002E198C /* HomePortraitCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePortraitCollectionViewLayout.swift; path = Views/HomePortraitCollectionViewLayout.swift; sourceTree = "<group>"; };
 		D0E536781C70405D004794D8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controllers/SearchViewController.swift; sourceTree = "<group>"; };
+		D34B1B2CC4D5F7F38117E25A /* Pods_PetAdoptionTransportKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetAdoptionTransportKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F2A72F1D6A081F00E92647 /* PetAdoptionTransportKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PetAdoptionTransportKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F2A7311D6A081F00E92647 /* PetAdoptionTransportKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetAdoptionTransportKit.h; sourceTree = "<group>"; };
 		D4F2A7331D6A081F00E92647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 		D769DE3B1C62EA82008C0BF8 /* LostPet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LostPet.storyboard; path = Storyboards/LostPet.storyboard; sourceTree = "<group>"; };
 		D769DE3D1C62EB6A008C0BF8 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Search.storyboard; path = Storyboards/Search.storyboard; sourceTree = "<group>"; };
 		D769DE3F1C62EDB1008C0BF8 /* PetListings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PetListings.storyboard; path = Storyboards/PetListings.storyboard; sourceTree = "<group>"; };
+		E9E24A205D6B26CC1828A499 /* Pods-PetAdoptionTransportKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoptionTransportKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoptionTransportKit/Pods-PetAdoptionTransportKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,8 +215,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F8515E21C6CBD100FACB0F6 /* Pods_PetAdoption_iOS.framework in Frameworks */,
 				D4F2A7441D6A081F00E92647 /* PetAdoptionTransportKit.framework in Frameworks */,
+				CF1BEE2249739EED9B62E35A /* Pods_PetAdoption_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +241,7 @@
 				4200BBCD1D6BCFD1003C00A7 /* AlamofireImage.framework in Frameworks */,
 				D4F2A7781D6A2CA500E92647 /* MapKit.framework in Frameworks */,
 				D4F2A7511D6A0D6800E92647 /* Alamofire.framework in Frameworks */,
+				FDD40C5BEE87EE113F867071 /* Pods_PetAdoptionTransportKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +263,8 @@
 				D4F2A7771D6A2CA500E92647 /* MapKit.framework */,
 				D4F2A7501D6A0D6800E92647 /* Alamofire.framework */,
 				925933A48637FAFF5BE6240D /* Pods.framework */,
-				45654696408DDD70011AF14D /* Pods_PetAdoption_iOS.framework */,
+				8E03CB38656D2AADF7FD0D71 /* Pods_PetAdoption_iOS.framework */,
+				D34B1B2CC4D5F7F38117E25A /* Pods_PetAdoptionTransportKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -310,11 +316,13 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		96950FBDCCB4B70AC05D197F /* Pods */ = {
+		79436C2B50D734C7B53ADFFC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				743003C75DF42CAE3261435B /* Pods-PetAdoption-iOS.debug.xcconfig */,
-				B7546D298D6108BB5722AD6E /* Pods-PetAdoption-iOS.release.xcconfig */,
+				9ED513E182EC3E0D411D3010 /* Pods-PetAdoption-iOS.debug.xcconfig */,
+				1FA3167A2ABE26FB9A8D9C7B /* Pods-PetAdoption-iOS.release.xcconfig */,
+				62223EE9A6D916E962564C15 /* Pods-PetAdoptionTransportKit.debug.xcconfig */,
+				E9E24A205D6B26CC1828A499 /* Pods-PetAdoptionTransportKit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -338,7 +346,7 @@
 				D4F2A73E1D6A081F00E92647 /* PetAdoptionTransportKitTests */,
 				D0950AC51C618C2F002E198C /* Products */,
 				0CC76AEEB5517DD4F07756A4 /* Frameworks */,
-				96950FBDCCB4B70AC05D197F /* Pods */,
+				79436C2B50D734C7B53ADFFC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -551,13 +559,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0950AEC1C618C2F002E198C /* Build configuration list for PBXNativeTarget "PetAdoption-iOS" */;
 			buildPhases = (
-				DA7A336D2BF27B14D8C3F968 /* Check Pods Manifest.lock */,
+				4EE65001304916E4243D67F9 /* [CP] Check Pods Manifest.lock */,
 				D0950AC01C618C2F002E198C /* Sources */,
 				D0950AC11C618C2F002E198C /* Frameworks */,
 				D0950AC21C618C2F002E198C /* Resources */,
-				3FB7DE963C5579D9E94F3348 /* Embed Pods Frameworks */,
-				3C048A49BC2D30F144EEA9D6 /* Copy Pods Resources */,
 				D4F2A74B1D6A081F00E92647 /* Embed Frameworks */,
+				3013A3130D5F107872CCE06F /* [CP] Embed Pods Frameworks */,
+				411C37C000D10391D6534B3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -609,10 +617,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4F2A74A1D6A081F00E92647 /* Build configuration list for PBXNativeTarget "PetAdoptionTransportKit" */;
 			buildPhases = (
+				AAD380695E8228A98DBAEB01 /* [CP] Check Pods Manifest.lock */,
 				D4F2A72A1D6A081F00E92647 /* Sources */,
 				D4F2A72B1D6A081F00E92647 /* Frameworks */,
 				D4F2A72C1D6A081F00E92647 /* Headers */,
 				D4F2A72D1D6A081F00E92647 /* Resources */,
+				F99B303D6BC81CDA8B71CE39 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -752,29 +762,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3C048A49BC2D30F144EEA9D6 /* Copy Pods Resources */ = {
+		3013A3130D5F107872CCE06F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3FB7DE963C5579D9E94F3348 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,19 +777,64 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DA7A336D2BF27B14D8C3F968 /* Check Pods Manifest.lock */ = {
+		411C37C000D10391D6534B3E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EE65001304916E4243D67F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AAD380695E8228A98DBAEB01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F99B303D6BC81CDA8B71CE39 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetAdoptionTransportKit/Pods-PetAdoptionTransportKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1009,10 +1049,10 @@
 		};
 		D0950AED1C618C2F002E198C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 743003C75DF42CAE3261435B /* Pods-PetAdoption-iOS.debug.xcconfig */;
+			baseConfigurationReference = 9ED513E182EC3E0D411D3010 /* Pods-PetAdoption-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1026,10 +1066,10 @@
 		};
 		D0950AEE1C618C2F002E198C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7546D298D6108BB5722AD6E /* Pods-PetAdoption-iOS.release.xcconfig */;
+			baseConfigurationReference = 1FA3167A2ABE26FB9A8D9C7B /* Pods-PetAdoption-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1091,6 +1131,7 @@
 		};
 		D4F2A7461D6A081F00E92647 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62223EE9A6D916E962564C15 /* Pods-PetAdoptionTransportKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1118,6 +1159,7 @@
 		};
 		D4F2A7471D6A081F00E92647 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E24A205D6B26CC1828A499 /* Pods-PetAdoptionTransportKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
