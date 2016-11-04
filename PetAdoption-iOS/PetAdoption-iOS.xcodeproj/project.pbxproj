@@ -72,7 +72,6 @@
 		D769DE3C1C62EA82008C0BF8 /* LostPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D769DE3B1C62EA82008C0BF8 /* LostPet.storyboard */; };
 		D769DE3E1C62EB6A008C0BF8 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D769DE3D1C62EB6A008C0BF8 /* Search.storyboard */; };
 		D769DE401C62EDB1008C0BF8 /* PetListings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D769DE3F1C62EDB1008C0BF8 /* PetListings.storyboard */; };
-		FDD40C5BEE87EE113F867071 /* Pods_PetAdoptionTransportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34B1B2CC4D5F7F38117E25A /* Pods_PetAdoptionTransportKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,7 +127,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1FA3167A2ABE26FB9A8D9C7B /* Pods-PetAdoption-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		4200BBCC1D6BCFD1003C00A7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage.framework"; sourceTree = "<group>"; };
 		42070E081D7470A100B02BA2 /* DescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionCell.swift; path = Views/DescriptionCell.swift; sourceTree = "<group>"; };
 		420FD5751D6F255A00E5DD89 /* PetListingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetListingDetailVC.swift; path = Controllers/PetListingDetailVC.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 		D0950B001C619172002E198C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = Controllers/InfoViewController.swift; sourceTree = "<group>"; };
 		D0950B0C1C6198C2002E198C /* HomePortraitCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePortraitCollectionViewLayout.swift; path = Views/HomePortraitCollectionViewLayout.swift; sourceTree = "<group>"; };
 		D0E536781C70405D004794D8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controllers/SearchViewController.swift; sourceTree = "<group>"; };
-		D34B1B2CC4D5F7F38117E25A /* Pods_PetAdoptionTransportKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetAdoptionTransportKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F2A72F1D6A081F00E92647 /* PetAdoptionTransportKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PetAdoptionTransportKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F2A7311D6A081F00E92647 /* PetAdoptionTransportKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetAdoptionTransportKit.h; sourceTree = "<group>"; };
 		D4F2A7331D6A081F00E92647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -804,22 +801,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		AAD380695E8228A98DBAEB01 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		88E23DAA72EF2AE12EBAA975 /* [CP] Check Pods Manifest.lock */ = {
@@ -1071,7 +1053,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8AAD5FEFC48F2F2A23F42E1D /* Pods-PetAdoption-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4X359D924E;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1090,7 +1072,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB77A283D0B7D820C44F8CAD /* Pods-PetAdoption-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4X359D924E;
 				FRAMEWORK_SEARCH_PATHS = (

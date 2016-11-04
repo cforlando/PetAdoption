@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="OpenSans-Light.ttf">
+        <array key="OpenSans-Light.ttf">
             <string>OpenSans-Light</string>
-            <string>OpenSans-Light</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -20,32 +23,41 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="petadoptionsloadingscreen" translatesAutoresizingMaskIntoConstraints="NO" id="LCo-R5-T6j">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Adoption" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2g-DX-pFZ">
-                                <rect key="frame" x="207" y="90" width="187" height="44"/>
+                                <rect key="frame" x="113.66666666666669" y="90" width="187" height="44"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Town of Lady Lake, Florida" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2w-5m-nV8">
-                                <rect key="frame" x="218" y="483" width="164" height="20"/>
+                                <rect key="frame" x="125" y="619" width="164" height="20"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="code_for_orlando_white" translatesAutoresizingMaskIntoConstraints="NO" id="zdk-4P-eMD">
+                                <rect key="frame" x="162" y="663" width="91" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="7fE-Yj-0oM"/>
+                                    <constraint firstAttribute="height" constant="53" id="IOt-pu-mp9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LCo-R5-T6j" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0P9-Ik-tOQ"/>
                             <constraint firstItem="n2g-DX-pFZ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="70" id="BfW-TH-Pz2"/>
                             <constraint firstItem="U2w-5m-nV8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DKY-R4-mKp"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="U2w-5m-nV8" secondAttribute="bottom" constant="97" id="H6C-tz-woZ"/>
+                            <constraint firstItem="zdk-4P-eMD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KKz-8J-uEW"/>
                             <constraint firstItem="LCo-R5-T6j" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="Scd-WK-kTD"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="zdk-4P-eMD" secondAttribute="bottom" constant="20" id="XuD-eZ-2UF"/>
                             <constraint firstItem="n2g-DX-pFZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bLd-Aa-vC4"/>
                             <constraint firstItem="LCo-R5-T6j" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ceM-md-W0G"/>
                             <constraint firstItem="LCo-R5-T6j" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="on8-t6-Gp6"/>
@@ -54,10 +66,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="374.18478260869568"/>
         </scene>
     </scenes>
     <resources>
+        <image name="code_for_orlando_white" width="129" height="90"/>
         <image name="petadoptionsloadingscreen" width="750" height="1334"/>
     </resources>
 </document>
