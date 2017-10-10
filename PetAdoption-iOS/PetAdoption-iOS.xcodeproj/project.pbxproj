@@ -660,11 +660,13 @@
 					D0950AD71C618C2F002E198C = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 4X359D924E;
+						LastSwiftMigration = 0830;
 						TestTargetID = D0950AC31C618C2F002E198C;
 					};
 					D0950AE21C618C2F002E198C = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 4X359D924E;
+						LastSwiftMigration = 0830;
 						TestTargetID = D0950AC31C618C2F002E198C;
 					};
 					D4F2A72E1D6A081F00E92647 = {
@@ -1111,6 +1113,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codefororlando.PetAdoption-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetAdoption-iOS.app/PetAdoption-iOS";
 			};
 			name = Debug;
@@ -1124,6 +1127,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codefororlando.PetAdoption-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetAdoption-iOS.app/PetAdoption-iOS";
 			};
 			name = Release;
@@ -1136,6 +1140,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codefororlando.PetAdoption-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "PetAdoption-iOS";
 				USES_XCTRUNNER = YES;
 			};
@@ -1149,6 +1154,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codefororlando.PetAdoption-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "PetAdoption-iOS";
 				USES_XCTRUNNER = YES;
 			};

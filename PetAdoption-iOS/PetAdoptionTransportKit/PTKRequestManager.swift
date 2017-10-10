@@ -11,10 +11,10 @@ import Alamofire
 import AlamofireImage
 
 private let PTKSharedInstance = PTKRequestManager()
-private let PTKBaseURL = "http://cfo-pet-adoption-server.eastus.cloudapp.azure.com/api/v2/"
+private let PTKBaseURL = "https://pet-adoption-server.herokuapp.com/api/v2/"
 
 private let PTKGetSpecies = "\(PTKBaseURL)species"
-private let PTKGetPets = "\(PTKBaseURL)list"
+private let PTKGetPets = "\(PTKGetSpecies)/all/animals/list"
 
 public typealias PTKRequestSpeciesComplete = (_ species: [PTKSpecieType]?, _ error: NSError?) -> Void
 public typealias PTKRequestPetsComplete = (_ pets: [PTKPet]?, _ error: NSError?) -> Void
