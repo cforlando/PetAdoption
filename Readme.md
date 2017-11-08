@@ -1,6 +1,6 @@
-#Pet Adoption for iOS[![Build Status](https://travis-ci.org/cforlando/PetAdoption-iOS.svg?branch=master)](https://travis-ci.org/cforlando/PetAdoption-iOS)
+# Pet Adoption for iOS[![Build Status](https://travis-ci.org/cforlando/PetAdoption-iOS.svg?branch=master)](https://travis-ci.org/cforlando/PetAdoption-iOS)
 -----
-##About
+## About
 ------
 **Pet Adoption** is an iOS app being built for the Town of Lady Lake, Florida to assist citizens in adopting animals for local shelters.
 
@@ -20,8 +20,8 @@ John Li (johnliglobal@gmail.com) (slack: johnleeroy)
 
 ## Requirements
 ------
-- Xcode v8.0
-- Cocoapods v1.1.1
+- Xcode v9.0
+- Cocoapods v1.3.1
 
 If you do not have CocoaPods installed, you can do so by opening Terminal and entering: `sudo gem install cocoapods`.  Once you have done that, navigate to the project directory and run `pod install`.  Make sure you open the .xcworkspace for the project.
 
