@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Toast_Swift
 import PetAdoptionTransportKit
 import AlamofireImage
 
@@ -105,7 +104,7 @@ class PetListingViewController: UIViewController
             { pets, error in
                 if let error = error
                 {
-                    self.view.makeToast(error.localizedDescription)
+                    print(error.localizedDescription)
                 }
                 else
                 {

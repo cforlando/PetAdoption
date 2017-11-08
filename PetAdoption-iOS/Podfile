@@ -4,10 +4,8 @@ use_frameworks!
 platform :ios, '9.0'
 
 target 'PetAdoption-iOS' do
-  pod 'SDWebImage'
   pod 'Alamofire', '~> 4.5'
   pod 'AlamofireImage', '~> 3.3'
-  pod 'Toast-Swift', '~> 2.0'
 end
 
 target 'PetAdoptionTransportKit' do

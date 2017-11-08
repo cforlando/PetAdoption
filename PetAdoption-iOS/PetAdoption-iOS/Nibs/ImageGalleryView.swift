@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import PetAdoptionTransportKit
 
 class ImageGalleryView: UIView
 {
@@ -18,7 +18,9 @@ class ImageGalleryView: UIView
 	
     func updateWithPet(imageUrl: String)
     {
-        let url = URL(string: imageUrl)
-        self.imagePlacholderImageView.sd_setImage(with: url)
+        _ = PTKRequestManager.sharedInstance().request(imageAtPath: imageUrl)
+        { image, error in
+            self.imagePlacholderImageView.image = image
+        }
     }
 }
