@@ -10,6 +10,8 @@ import UIKit
 import PetAdoptionTransportKit
 import AlamofireImage
 
+let ZIPCODE_KEY = "ZIPCODE"
+
 class PetListingViewController: UIViewController
 {
     ////////////////////////////////////////////////////////////
@@ -28,7 +30,7 @@ class PetListingViewController: UIViewController
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
-    var petData = [PTKPet]()
+    var petData = [PFPet]()
     var viewControllerTitle = "Home"
     let requestManager = PTKRequestManager.sharedInstance()
 
@@ -51,7 +53,10 @@ class PetListingViewController: UIViewController
         refreshControl.addTarget(self, action: #selector(refreshTriggered), for: .valueChanged)
         self.collectionView.addSubview(refreshControl)
         
-        loadPets()
+        if let _ = UserDefaults.standard.string(forKey: ZIPCODE_KEY)
+        {
+            loadPets()
+        }
     }
 
     ////////////////////////////////////////////////////////////
@@ -59,7 +64,14 @@ class PetListingViewController: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        self.navigationItem.title = NSLocalizedString("Town Of Lady Lake", comment: "")
+        if let zipCode = UserDefaults.standard.string(forKey: ZIPCODE_KEY)
+        {
+            setNavigationTitle("Pets near \(zipCode)")
+        }
+        else
+        {
+            setNavigationTitle("Pet Adoption")
+        }
     }
 
     ////////////////////////////////////////////////////////////
@@ -91,35 +103,89 @@ class PetListingViewController: UIViewController
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if let vc = segue.destination as? PetListingDetailVC, segue.identifier == PetListingViewController.SEGUE_TO_PET_DETAILS_ID,
+        if let vc = segue.destination as? PetListingDetailVC,
+            segue.identifier == PetListingViewController.SEGUE_TO_PET_DETAILS_ID,
             let indexPath = sender as? IndexPath
         {
             vc.pet = self.petData[indexPath.row]
         }
     }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - IBActions
+    ////////////////////////////////////////////////////////////
     
-    // Helper methods
-    func loadPets() {
-        requestManager.request(AllPetsWithcompletion:
-            { pets, error in
-                if let error = error
-                {
-                    print(error.localizedDescription)
-                }
-                else
-                {
-                    if let pets = pets
-                    {
-                        self.petData = pets
-                        self.collectionView.reloadData()
-                    }
-                }
-                
-                self.refreshControl.endRefreshing()
-        })
+    @IBAction func locationButtonTapped(_ sender: Any)
+    {
+        presentZipCodeAlertController()
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Helper Functions
+    ////////////////////////////////////////////////////////////
+    
+    func presentZipCodeAlertController()
+    {
+        let alertController = UIAlertController(title: "Set Location", message: "Please enter your zip code", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let zipCodeAction = UIAlertAction(title: "OK", style: .default)
+        { [unowned alertController] _ in
+            let zipText = alertController.textFields![0]
+            if let zipCode = zipText.text
+            {
+                UserDefaults.standard.set(zipCode, forKey: ZIPCODE_KEY)
+                self.setNavigationTitle("Pets near \(zipCode)")
+            }
+            self.loadPets()
+        }
+        
+        alertController.addTextField
+            { textField in
+                textField.placeholder = "Zip Code"
+                textField.keyboardType = .numberPad
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(zipCodeAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    @objc func refreshTriggered() {
+    ////////////////////////////////////////////////////////////
+
+    func setNavigationTitle(_ title: String)
+    {
+        self.navigationItem.title = NSLocalizedString(title, comment: "")
+    }
+    
+    ////////////////////////////////////////////////////////////
+
+    func loadPets()
+    {
+        guard let zipCode = UserDefaults.standard.string(forKey: ZIPCODE_KEY) else { return }
+        requestManager.request(PetFinderPetsFrom: zipCode)
+        { pets, error in
+            if let error = error
+            {
+                print(error.localizedDescription)
+            }
+            else
+            {
+                if let pets = pets
+                {
+                    self.petData = pets
+                    self.collectionView.reloadData()
+                }
+            }
+            
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
+    ////////////////////////////////////////////////////////////
+
+    @objc func refreshTriggered()
+    {
         loadPets()
     }
 }

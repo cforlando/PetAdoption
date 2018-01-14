@@ -25,7 +25,7 @@ public class PetCell: UICollectionViewCell, ReusableView
     ////////////////////////////////////////////////////////////
 
     private var request: Request?
-    private var pet: PTKPet?
+    private var pet: PFPet?
 
     ////////////////////////////////////////////////////////////
     // MARK: - UICollectionViewReusableView
@@ -41,7 +41,7 @@ public class PetCell: UICollectionViewCell, ReusableView
     // MARK: - Helper Functions
     ////////////////////////////////////////////////////////////
 
-    func configureCell(with pet: PTKPet)
+    func configureCell(with pet: PFPet)
     {
         self.pet = pet
         self.petNameLabel.text = pet.name
@@ -70,7 +70,7 @@ public class PetCell: UICollectionViewCell, ReusableView
     {
         self.activityIndicator.startAnimating()
 
-        if let imageUrl = self.pet?.imageURLPaths.first
+        if let imageUrl = self.pet?.photos.first?.url
         {
             self.request = PTKRequestManager.sharedInstance().request(imageAtPath: imageUrl)
             { image, error in

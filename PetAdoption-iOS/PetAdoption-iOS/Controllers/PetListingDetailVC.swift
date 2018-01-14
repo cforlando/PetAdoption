@@ -49,7 +49,7 @@ class PetListingDetailVC: UITableViewController
     var dataSource = [[SectionItem]]()
     var images = [String]()
 
-    var pet: PTKPet?
+    var pet: PFPet?
     {
         didSet
         {
@@ -64,7 +64,7 @@ class PetListingDetailVC: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.pageControl.numberOfPages = self.pet?.imageURLPaths.count ?? 0
+        self.pageControl.numberOfPages = self.pet?.photos.count ?? 0
         self.tableView.backgroundColor = UIColor.themePrimaryColor()
     }
 
@@ -97,13 +97,13 @@ class PetListingDetailVC: UITableViewController
 
         self.featuresSection =
         [
-            SectionItem(name: "Breed", value: pet.primaryBreed),
-            SectionItem(name: "Gender", value: pet.gender.rawValue),
-            SectionItem(name: "Age", value: pet.age.description),
-            SectionItem(name: "Weight", value: pet.size),
+            SectionItem(name: "Breed", value: pet.breeds.first ?? "unknown"),
+            SectionItem(name: "Gender", value: pet.sex.description),
+            SectionItem(name: "Age", value: pet.age.rawValue),
+            SectionItem(name: "Size", value: pet.size.description),
             SectionItem(name: "Spayed/Neutered", value: pet.isSpayed ? "Yes" : "No"),
-            SectionItem(name: "Housebroken", value: pet.houseTrained.rawValue),
-            SectionItem(name: "Declawed", value: pet.declawed.rawValue)
+            SectionItem(name: "Housebroken", value: pet.isHouseTrained ? "Yes" : "No"),
+            SectionItem(name: "Declawed", value: pet.isDeclawed ? "Yes" : "No")
         ]
 
         self.personalitySection =
@@ -113,21 +113,24 @@ class PetListingDetailVC: UITableViewController
             SectionItem(name: "Good with Cats", value: pet.isGoodWithCats ? "Yes" : "No")
         ]
 
-        var intakeDateString = ""
-        if let intakeDate = pet.intakeDate
-        {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .long
-            intakeDateString = formatter.string(from: intakeDate)
-        }
-        else
-        {
-            intakeDateString = "Unknown"
-        }
-
+//        var intakeDateString = ""
+//        if let intakeDate = pet.intakeDate
+//        {
+//            let formatter = DateFormatter()
+//            formatter.dateStyle = .long
+//            intakeDateString = formatter.string(from: intakeDate)
+//        }
+//        else
+//        {
+//            intakeDateString = "Unknown"
+//        }
+//
+        
         self.adoptionInfoSection =
         [
-            SectionItem(name: "Adoptable Since", value: intakeDateString)
+            SectionItem(name: "Phone Number", value: pet.contact.phone),
+            SectionItem(name: "E-mail", value: pet.contact.email)
+//            SectionItem(name: "Adoptable Since", value: intakeDateString)
         ]
 
         self.dataSource =
@@ -153,9 +156,9 @@ class PetListingDetailVC: UITableViewController
 
         self.imageContainerViewHeightConstraint.constant = self.imageContainerScrollView.frame.width * 0.6
 
-        let fullWidth : CGFloat = CGFloat(pet.imageURLPaths.count) * self.imageContainerScrollView.frame.width
+        let fullWidth : CGFloat = CGFloat(pet.photos.count) * self.imageContainerScrollView.frame.width
 
-        for (index, petImageUrl) in pet.imageURLPaths.enumerated()
+        for (index, petImageUrl) in pet.photos.enumerated()
         {
             let xOffset = self.imageContainerScrollView.frame.width * CGFloat(index)
 
@@ -164,7 +167,7 @@ class PetListingDetailVC: UITableViewController
             {
                 petImageCell.frame = currentFrameOfScreen
                 petImageCell.clipsToBounds = true
-                petImageCell.updateWithPet(imageUrl: petImageUrl)
+                petImageCell.updateWithPet(imageUrl: petImageUrl.url)
                 self.imageContainerScrollView.addSubview(petImageCell)
             }
         }
@@ -180,7 +183,7 @@ class PetListingDetailVC: UITableViewController
     {
         if (scrollView == self.imageContainerScrollView)
         {
-            let numberOfPages = self.pet?.imageURLPaths.count ?? 0
+            let numberOfPages = self.pet?.photos.count ?? 0
             let fullContentWidth = scrollView.contentSize.width
             let widthOfIndividualItems = Int(fullContentWidth / CGFloat(numberOfPages))
 
@@ -277,7 +280,7 @@ class PetListingDetailVC: UITableViewController
             case Sections.personality.rawValue:
                 return "Personality"
             case Sections.adoptionInfo.rawValue:
-                return "Adoption Information"
+                return "Contact Information"
             default:
                 return nil
         }

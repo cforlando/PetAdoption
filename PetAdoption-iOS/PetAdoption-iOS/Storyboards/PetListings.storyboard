@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Qib-KM-1M4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Qib-KM-1M4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +51,7 @@
                                                     <rect key="frame" x="0.0" y="88" width="142" height="47"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="rYm-3m-8NY">
-                                                            <rect key="frame" x="8" y="11" width="126" height="26"/>
+                                                            <rect key="frame" x="8" y="9" width="126" height="30"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="22"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -100,7 +100,13 @@
                             <constraint firstAttribute="trailing" secondItem="AZn-wT-4hd" secondAttribute="trailing" id="ydT-8C-VFI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="iPs-xQ-mTd"/>
+                    <navigationItem key="navigationItem" id="iPs-xQ-mTd">
+                        <barButtonItem key="rightBarButtonItem" image="target" id="BTo-P8-bTN">
+                            <connections>
+                                <action selector="locationButtonTapped:" destination="OcW-IL-9vK" id="hta-lz-HkE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="AZn-wT-4hd" id="hL3-0m-0sX"/>
                         <segue destination="d7T-Wp-bkt" kind="show" identifier="segueToPetDetails" id="KVg-Yj-Cox"/>
@@ -246,5 +252,6 @@
     </scenes>
     <resources>
         <image name="placeholder" width="200" height="200"/>
+        <image name="target" width="24" height="24"/>
     </resources>
 </document>
