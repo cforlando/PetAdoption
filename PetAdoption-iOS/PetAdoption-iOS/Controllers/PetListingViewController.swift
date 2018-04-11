@@ -10,7 +10,7 @@ import UIKit
 import PetAdoptionTransportKit
 import AlamofireImage
 
-class PetListingViewController: UIViewController
+class PetListingViewController: UIViewController, UIPopoverPresentationControllerDelegate
 {
     ////////////////////////////////////////////////////////////
     // MARK: - Constants
@@ -23,7 +23,9 @@ class PetListingViewController: UIViewController
     ////////////////////////////////////////////////////////////
 
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
+    @IBOutlet weak var filterBarButton: UIBarButtonItem!
+    
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
@@ -125,6 +127,9 @@ class PetListingViewController: UIViewController
         presentZipCodeAlertController()
     }
 
+    @IBAction func filterButtonTapped(_ sender: UIBarButtonItem) {
+        presentFilterViewController()
+    }
     ////////////////////////////////////////////////////////////
     // MARK: - Helper Functions
     ////////////////////////////////////////////////////////////
@@ -173,6 +178,20 @@ class PetListingViewController: UIViewController
         self.actionToEnable = zipCodeAction
         zipCodeAction.isEnabled = false
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentFilterViewController()
+    {
+        let filterVC = storyboard?.instantiateViewController(withIdentifier: "filterVC")
+        filterVC?.modalPresentationStyle = UIModalPresentationStyle.popover
+        let popVC = filterVC?.popoverPresentationController
+        popVC?.delegate = self
+        popVC?.barButtonItem = filterBarButton
+        self.present(filterVC!, animated: true, completion: nil)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
     ////////////////////////////////////////////////////////////
