@@ -118,6 +118,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iPs-xQ-mTd">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" image="filterIcon" id="xHY-8m-NMh"/>
                         <barButtonItem key="rightBarButtonItem" image="target" id="BTo-P8-bTN">
                             <connections>
                                 <action selector="locationButtonTapped:" destination="OcW-IL-9vK" id="hta-lz-HkE"/>
@@ -268,6 +269,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="filterIcon" width="24" height="24"/>
         <image name="placeholder" width="200" height="200"/>
         <image name="target" width="24" height="24"/>
     </resources>
