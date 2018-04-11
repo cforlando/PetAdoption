@@ -433,24 +433,6 @@
             </objects>
             <point key="canvasLocation" x="461" y="-539"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="6fO-zo-Xiv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lnw-1s-8qR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ApZ-E0-mXB">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Qi9-T1-Dwh" kind="relationship" relationship="rootViewController" id="bn7-hB-Fjd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="36O-uk-LYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1384.8" y="218.1409295352324"/>
-        </scene>
     </scenes>
     <resources>
         <image name="filterIcon" width="24" height="24"/>
