@@ -57,10 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		navBar.barStyle = .black
 		
-		UIButton.appearance().tintColor = UIColor.themeTintColor()
+        // Deactivated this temporarily. It causes tableview cell checkmarks to be white on white and invisible. Removing this line didn't seem to affect appearance of the existing project
+		// UIButton.appearance().tintColor = UIColor.themeTintColor()
 		UIBarButtonItem.appearance().tintColor = UIColor.themeTintColor()
 		UITabBar.appearance().tintColor = UIColor.themePrimaryColor()
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font:UIFont.themeNormalFont(ofSize: 10.0)], for: UIControlState.normal)
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font:UIFont.themeNormalFont(ofSize: 10.0)], for: UIControlState.normal)
 	}
 }
 
