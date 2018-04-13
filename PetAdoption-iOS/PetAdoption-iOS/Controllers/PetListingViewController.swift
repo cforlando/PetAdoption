@@ -26,6 +26,7 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
     
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
     
+    @IBOutlet weak var noResultsLabel: UILabel!
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
@@ -260,6 +261,7 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
+        self.noResultsLabel.isHidden = !(self.filteredPetData.count == 0)
         return self.filteredPetData.count
     }
 

@@ -144,6 +144,7 @@
                     <connections>
                         <outlet property="collectionView" destination="AZn-wT-4hd" id="hL3-0m-0sX"/>
                         <outlet property="filterBarButton" destination="xHY-8m-NMh" id="AbE-34-bzN"/>
+                        <outlet property="noResultsLabel" destination="i3c-tL-6Wu" id="NXK-18-vJf"/>
                         <segue destination="d7T-Wp-bkt" kind="show" identifier="segueToPetDetails" id="KVg-Yj-Cox"/>
                     </connections>
                 </viewController>
