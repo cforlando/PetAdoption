@@ -115,7 +115,7 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
             segue.identifier == PetListingViewController.SEGUE_TO_PET_DETAILS_ID,
             let indexPath = sender as? IndexPath
         {
-            vc.pet = self.petData[indexPath.row]
+            vc.pet = self.filteredPetData[indexPath.row]
         }
     }
     
