@@ -12,7 +12,9 @@ class filterViewController: UITableViewController {
     enum RowIndex:Int {
         case All = 0, Dogs, Cats, Birds, SmallFurry, Horses, BarnYard, Reptiles
     }
-    var selectedAnimalTypes: Set<String> = ["dogs","cats"]
+    
+    var selectedAnimalTypes: Set<String> = []
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -25,8 +27,32 @@ class filterViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        loadDefaults()
         setAnimalTypeCheckmarks()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveDefaults()
+    }
+    
+    func loadDefaults(){
+        let defaults = UserDefaults.standard
+        
+        selectedAnimalTypes = defaults.object(forKey: "selectedAnimalTypes") as? Set<String> ?? ["all"]
+        
+        guard let data:Data = defaults.object(forKey: "selectedAnimalTypes") as? Data else {
+            print("Couldnt load animal type preferences!")
+            return
+        }
+        selectedAnimalTypes = NSKeyedUnarchiver.unarchiveObject(with: data) as! Set<String>
+    }
+    
+    func saveDefaults(){
+        let defaults = UserDefaults.standard
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: selectedAnimalTypes)
+        defaults.set(encodedData, forKey: "selectedAnimalTypes")
+        defaults.synchronize()
     }
     
     func setAnimalTypeCheckmarks() {
@@ -76,8 +102,6 @@ class filterViewController: UITableViewController {
                 selectedAnimalTypes.insert(animalType)
             }
         }
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
