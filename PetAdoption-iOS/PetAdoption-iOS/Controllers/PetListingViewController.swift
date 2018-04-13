@@ -285,7 +285,7 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
     {
-        if indexPath.item == self.petData.count - 1,
+        if indexPath.item == self.filteredPetData.count - 1,
             let lastOffset = self.lastOffset,
             let offset = Int(lastOffset) // this conversion is here simply to accommodate for the comparison below
         {
