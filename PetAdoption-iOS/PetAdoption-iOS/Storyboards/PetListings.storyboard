@@ -142,7 +142,7 @@
         <!--Filter-->
         <scene sceneID="twx-dZ-9gJ">
             <objects>
-                <tableViewController storyboardIdentifier="filterVC" title="Filter" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qi9-T1-Dwh" customClass="filterViewController" customModule="PetAdoption_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="filterVC" title="Filter" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qi9-T1-Dwh" customClass="FilterViewController" customModule="PetAdoption_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gbn-i4-R85">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

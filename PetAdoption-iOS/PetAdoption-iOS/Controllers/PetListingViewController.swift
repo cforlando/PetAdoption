@@ -31,6 +31,7 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
     ////////////////////////////////////////////////////////////
 
     var petData = [PFPet]()
+    var filteredPetData = [PFPet]()
     var viewControllerTitle = "Home"
     let requestManager = PTKRequestManager.sharedInstance()
     var lastOffset: String?
@@ -182,7 +183,7 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
     
     func presentFilterViewController()
     {
-        let filterVC = storyboard?.instantiateViewController(withIdentifier: "filterVC") as? filterViewController
+        let filterVC = storyboard?.instantiateViewController(withIdentifier: "filterVC") as? FilterViewController
         filterVC?.delegate = self
         filterVC?.modalPresentationStyle = UIModalPresentationStyle.popover
         let popVC = filterVC?.popoverPresentationController
@@ -225,9 +226,11 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
                     if reset
                     {
                         self.petData = [PFPet]()
+                        self.filteredPetData = [PFPet]()
                     }
                     
                     self.petData += pets
+                    self.setFilteredAnimalTypes()
                     self.collectionView.reloadData()
                 }
                 
@@ -257,7 +260,7 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return self.petData.count
+        return self.filteredPetData.count
     }
 
     ////////////////////////////////////////////////////////////
@@ -265,7 +268,7 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetCell.reuseIdentifier, for: indexPath) as! PetCell
-        let pet = petData[indexPath.row]
+        let pet = filteredPetData[indexPath.row]//petData[indexPath.row]
         cell.configureCell(with: pet)
 		
         return cell
@@ -315,11 +318,24 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
         
         return loadingView
     }
+    
+    func setFilteredAnimalTypes(){
+        let animalTypesSelected = FilterViewController.loadAnimalTypesSelected()
+        if animalTypesSelected.contains("all") {
+            self.filteredPetData = petData
+        } else {
+            self.filteredPetData = petData.filter {(pet:PFPet) -> Bool in
+                return animalTypesSelected.contains(pet.animalType.rawValue)
+            }
+        }
+        
+        collectionView.reloadData()
+    }
 }
 
 extension PetListingViewController: FilterSelectorDelegate {
     func didChangeAnimalTypeSelections() {
         print("User cahnged animal types seection!")
-        self.loadPets()
+        self.setFilteredAnimalTypes()
     }
 }

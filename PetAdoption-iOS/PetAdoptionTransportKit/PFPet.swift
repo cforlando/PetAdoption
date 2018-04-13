@@ -102,6 +102,7 @@ public struct PFPet
         
         for jsonObject in json["media"]["photos"]["photo"]
         {
+
             let photo = PFPhoto(json: jsonObject.1)
             if photo.size == "x"
             {

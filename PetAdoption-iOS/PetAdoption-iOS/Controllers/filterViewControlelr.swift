@@ -7,9 +7,9 @@
 //
 
 import UIKit
-class filterViewController: UITableViewController {
+
+class FilterViewController: UITableViewController {
     var delegate: FilterSelectorDelegate?
-    
     enum RowIndex:Int {
         case All = 0, Dogs, Cats, Birds, SmallFurry, Horses, BarnYard, Reptiles
     }
@@ -28,30 +28,24 @@ class filterViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadAnimalTypesSelected()
+        selectedAnimalTypes = FilterViewController.loadAnimalTypesSelected()
         setAnimalTypeCheckmarks()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        saveAnimalTypesSelected()
-    }
-    
-    func loadAnimalTypesSelected(){
+    class func loadAnimalTypesSelected() -> Set<String>{
         let defaults = UserDefaults.standard
-        
-        selectedAnimalTypes = defaults.object(forKey: "selectedAnimalTypes") as? Set<String> ?? ["all"]
         
         guard let data:Data = defaults.object(forKey: "selectedAnimalTypes") as? Data else {
-            print("Couldnt load animal type preferences!")
-            return
+            print("Couldnt load animal type preferences! Default to all animal types")
+            return ["all"]
         }
-        selectedAnimalTypes = NSKeyedUnarchiver.unarchiveObject(with: data) as! Set<String>
+        // convert the Data object to a Set<String>
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as! Set<String>
     }
     
-    func saveAnimalTypesSelected(){
+    class func saveAnimalTypesSelected(_ selectedAnimalTypes_: Set<String>){
         let defaults = UserDefaults.standard
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: selectedAnimalTypes)
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: selectedAnimalTypes_)
         defaults.set(encodedData, forKey: "selectedAnimalTypes")
         defaults.synchronize()
     }
@@ -68,21 +62,19 @@ class filterViewController: UITableViewController {
             } else {
                 switch indexPath.row{
                 case RowIndex.Dogs.rawValue:
-                    cell?.accessoryType = selectedAnimalTypes.contains("dogs") ? .checkmark : .none
+                    cell?.accessoryType = selectedAnimalTypes.contains("Dog") ? .checkmark : .none
                 case RowIndex.Cats.rawValue:
-                    cell?.accessoryType = selectedAnimalTypes.contains("cats") ? .checkmark : .none
+                    cell?.accessoryType = selectedAnimalTypes.contains("Cat") ? .checkmark : .none
                 case RowIndex.Birds.rawValue:
-                    cell?.accessoryType = selectedAnimalTypes.contains("birds") ? .checkmark : .none
+                    cell?.accessoryType = selectedAnimalTypes.contains("Bird") ? .checkmark : .none
                 case RowIndex.SmallFurry.rawValue:
-                    cell?.accessoryType = selectedAnimalTypes.contains("smallFurry") ? .checkmark : .none
-                case RowIndex.SmallFurry.rawValue:
-                    cell?.accessoryType = selectedAnimalTypes.contains("smallFurry") ? .checkmark : .none
+                    cell?.accessoryType = selectedAnimalTypes.contains("Small&Furry") ? .checkmark : .none
                 case RowIndex.Horses.rawValue:
-                    cell?.accessoryType = selectedAnimalTypes.contains("horses") ? .checkmark : .none
+                    cell?.accessoryType = selectedAnimalTypes.contains("Horse") ? .checkmark : .none
                 case RowIndex.BarnYard.rawValue:
-                    cell?.accessoryType = selectedAnimalTypes.contains("barnYard") ? .checkmark : .none
+                    cell?.accessoryType = selectedAnimalTypes.contains("BarnYard") ? .checkmark : .none
                 case RowIndex.Reptiles.rawValue:
-                    cell?.accessoryType = selectedAnimalTypes.contains("reptiles") ? .checkmark : .none
+                    cell?.accessoryType = selectedAnimalTypes.contains("Reptiles") ? .checkmark : .none
                 default:
                     cell?.accessoryType = .none
                 }
@@ -110,25 +102,25 @@ class filterViewController: UITableViewController {
         case RowIndex.All.rawValue:
             toggleSelectedAnimalType("all")
         case RowIndex.Dogs.rawValue:
-            toggleSelectedAnimalType("dogs")
+            toggleSelectedAnimalType("Dog")
         case RowIndex.Cats.rawValue:
-            toggleSelectedAnimalType("cats")
+            toggleSelectedAnimalType("Cat")
         case RowIndex.Birds.rawValue:
-            toggleSelectedAnimalType("birds")
+            toggleSelectedAnimalType("Bird")
         case RowIndex.SmallFurry.rawValue:
-            toggleSelectedAnimalType("smallFurry")
+            toggleSelectedAnimalType("Small&Furry")
         case RowIndex.Horses.rawValue:
-            toggleSelectedAnimalType("horses")
+            toggleSelectedAnimalType("Horse")
         case RowIndex.BarnYard.rawValue:
-            toggleSelectedAnimalType("barnYard")
+            toggleSelectedAnimalType("BarnYard")
         case RowIndex.Reptiles.rawValue:
-            toggleSelectedAnimalType("reptiles")
+            toggleSelectedAnimalType("Reptiles")
         default:
             print("no action")
         }
         setAnimalTypeCheckmarks()
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        FilterViewController.saveAnimalTypesSelected(selectedAnimalTypes)
         delegate?.didChangeAnimalTypeSelections()
     }
 }
