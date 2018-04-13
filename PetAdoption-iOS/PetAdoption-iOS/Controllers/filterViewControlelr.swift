@@ -8,6 +8,7 @@
 
 import UIKit
 class filterViewController: UITableViewController {
+    var delegate: FilterSelectorDelegate?
     
     enum RowIndex:Int {
         case All = 0, Dogs, Cats, Birds, SmallFurry, Horses, BarnYard, Reptiles
@@ -27,16 +28,16 @@ class filterViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadDefaults()
+        loadAnimalTypesSelected()
         setAnimalTypeCheckmarks()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        saveDefaults()
+        saveAnimalTypesSelected()
     }
     
-    func loadDefaults(){
+    func loadAnimalTypesSelected(){
         let defaults = UserDefaults.standard
         
         selectedAnimalTypes = defaults.object(forKey: "selectedAnimalTypes") as? Set<String> ?? ["all"]
@@ -48,7 +49,7 @@ class filterViewController: UITableViewController {
         selectedAnimalTypes = NSKeyedUnarchiver.unarchiveObject(with: data) as! Set<String>
     }
     
-    func saveDefaults(){
+    func saveAnimalTypesSelected(){
         let defaults = UserDefaults.standard
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: selectedAnimalTypes)
         defaults.set(encodedData, forKey: "selectedAnimalTypes")
@@ -105,7 +106,6 @@ class filterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected: $d", indexPath.row)
         switch indexPath.row {
         case RowIndex.All.rawValue:
             toggleSelectedAnimalType("all")
@@ -128,5 +128,12 @@ class filterViewController: UITableViewController {
         }
         setAnimalTypeCheckmarks()
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        delegate?.didChangeAnimalTypeSelections()
     }
+}
+
+
+protocol FilterSelectorDelegate {
+    func didChangeAnimalTypeSelections()
 }

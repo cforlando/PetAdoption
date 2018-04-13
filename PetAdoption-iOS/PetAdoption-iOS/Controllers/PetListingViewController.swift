@@ -182,7 +182,8 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
     
     func presentFilterViewController()
     {
-        let filterVC = storyboard?.instantiateViewController(withIdentifier: "filterVC")
+        let filterVC = storyboard?.instantiateViewController(withIdentifier: "filterVC") as? filterViewController
+        filterVC?.delegate = self
         filterVC?.modalPresentationStyle = UIModalPresentationStyle.popover
         let popVC = filterVC?.popoverPresentationController
         popVC?.delegate = self
@@ -313,5 +314,12 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
         }
         
         return loadingView
+    }
+}
+
+extension PetListingViewController: FilterSelectorDelegate {
+    func didChangeAnimalTypeSelections() {
+        print("User cahnged animal types seection!")
+        self.loadPets()
     }
 }
