@@ -335,7 +335,6 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
 
 extension PetListingViewController: FilterSelectorDelegate {
     func didChangeAnimalTypeSelections() {
-        print("User cahnged animal types seection!")
         self.setFilteredAnimalTypes()
     }
 }
