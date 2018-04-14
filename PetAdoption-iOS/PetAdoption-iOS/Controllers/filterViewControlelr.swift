@@ -11,7 +11,7 @@ import UIKit
 class FilterViewController: UITableViewController {
     var delegate: FilterSelectorDelegate?
     enum RowIndex:Int {
-        case All = 0, Dogs, Cats, Birds, SmallFurry, Horses, BarnYard, Reptiles
+        case All = 0, Dogs, Cats, Birds, SmallFurry, Horses, BarnYard, Reptiles, Rabbits
     }
     
     var selectedAnimalTypes: Set<String> = []
@@ -74,7 +74,9 @@ class FilterViewController: UITableViewController {
                 case RowIndex.BarnYard.rawValue:
                     cell?.accessoryType = selectedAnimalTypes.contains("BarnYard") ? .checkmark : .none
                 case RowIndex.Reptiles.rawValue:
-                    cell?.accessoryType = selectedAnimalTypes.contains("Reptiles") ? .checkmark : .none
+                    cell?.accessoryType = selectedAnimalTypes.contains("Reptile") ? .checkmark : .none
+                case RowIndex.Rabbits.rawValue:
+                    cell?.accessoryType = selectedAnimalTypes.contains("Rabbit") ? .checkmark : .none
                 default:
                     cell?.accessoryType = .none
                 }
@@ -114,7 +116,9 @@ class FilterViewController: UITableViewController {
         case RowIndex.BarnYard.rawValue:
             toggleSelectedAnimalType("BarnYard")
         case RowIndex.Reptiles.rawValue:
-            toggleSelectedAnimalType("Reptiles")
+            toggleSelectedAnimalType("Reptile")
+        case RowIndex.Rabbits.rawValue:
+            toggleSelectedAnimalType("Rabbit")
         default:
             print("no action")
         }
