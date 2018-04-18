@@ -342,7 +342,7 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		6F2A704A207EB56D00BF5AA0 /* filter */ = {
+		6F2A704A207EB56D00BF5AA0 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
 				6F2A704B207EB59700BF5AA0 /* FilterViewController.swift */,
