@@ -184,13 +184,13 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
     
     func presentFilterViewController()
     {
-        let filterVC = storyboard?.instantiateViewController(withIdentifier: "filterVC") as? FilterViewController
-        filterVC?.delegate = self
-        filterVC?.modalPresentationStyle = UIModalPresentationStyle.popover
-        let popVC = filterVC?.popoverPresentationController
-        popVC?.delegate = self
-        popVC?.barButtonItem = filterBarButton
-        self.present(filterVC!, animated: true, completion: nil)
+        guard let filterVC = storyboard?.instantiateViewController(withIdentifier: "filterVC") as? FilterViewController else {fatalError("Error: could not instantiate filterVC")}
+        filterVC.delegate = self
+        filterVC.modalPresentationStyle = UIModalPresentationStyle.popover
+        let popVC = filterVC.popoverPresentationController!
+        popVC.delegate = self
+        popVC.barButtonItem = filterBarButton
+        self.present(filterVC, animated: true, completion: nil)
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
