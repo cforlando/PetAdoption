@@ -1,5 +1,5 @@
 //
-//  filterViewControlelr.swift
+//  FilterViewController.swift
 //  PetAdoption-iOS
 //
 //  Created by Amir Fleminger on 4/11/18.
