@@ -85,9 +85,13 @@ class FilterViewController: UITableViewController {
         }
     }
     
+    func resetSelectedAnimalTypes(){
+        selectedAnimalTypes = ["all"]
+    }
+    
     func toggleSelectedAnimalType(_ animalType:String){
         if animalType == "all" {
-            selectedAnimalTypes = ["all"]
+            resetSelectedAnimalTypes()
             return
         } else {
             selectedAnimalTypes.remove("all")
@@ -96,6 +100,9 @@ class FilterViewController: UITableViewController {
             } else {
                 selectedAnimalTypes.insert(animalType)
             }
+        }
+        if selectedAnimalTypes.count == 0 {
+            resetSelectedAnimalTypes()
         }
     }
     
