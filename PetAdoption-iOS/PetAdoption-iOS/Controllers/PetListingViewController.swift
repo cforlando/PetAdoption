@@ -270,7 +270,7 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetCell.reuseIdentifier, for: indexPath) as! PetCell
-        let pet = filteredPetData[indexPath.row]//petData[indexPath.row]
+        let pet = filteredPetData[indexPath.row]
         cell.configureCell(with: pet)
 		
         return cell
