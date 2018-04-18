@@ -11,7 +11,7 @@ import UIKit
 class FilterViewController: UITableViewController {
     var delegate: FilterSelectorDelegate?
     enum RowIndex:Int {
-        case All = 0, Dogs, Cats, Birds, SmallFurry, Horses, BarnYard, Reptiles, Rabbits
+        case all = 0, dogs, cats, birds, smallFurry, horses, barnYard, reptiles, rabbits
     }
     
     var selectedAnimalTypes: Set<String> = []
@@ -58,24 +58,24 @@ class FilterViewController: UITableViewController {
             
             if selectedAnimalTypes.contains("all"){
                 // put a checkmark only on the 'All' cell
-                cell?.accessoryType = (indexPath.row == RowIndex.All.rawValue) ? .checkmark : .none
+                cell?.accessoryType = (indexPath.row == RowIndex.all.rawValue) ? .checkmark : .none
             } else {
                 switch indexPath.row{
-                case RowIndex.Dogs.rawValue:
+                case RowIndex.dogs.rawValue:
                     cell?.accessoryType = selectedAnimalTypes.contains("Dog") ? .checkmark : .none
-                case RowIndex.Cats.rawValue:
+                case RowIndex.cats.rawValue:
                     cell?.accessoryType = selectedAnimalTypes.contains("Cat") ? .checkmark : .none
-                case RowIndex.Birds.rawValue:
+                case RowIndex.birds.rawValue:
                     cell?.accessoryType = selectedAnimalTypes.contains("Bird") ? .checkmark : .none
-                case RowIndex.SmallFurry.rawValue:
+                case RowIndex.smallFurry.rawValue:
                     cell?.accessoryType = selectedAnimalTypes.contains("Small&Furry") ? .checkmark : .none
-                case RowIndex.Horses.rawValue:
+                case RowIndex.horses.rawValue:
                     cell?.accessoryType = selectedAnimalTypes.contains("Horse") ? .checkmark : .none
-                case RowIndex.BarnYard.rawValue:
+                case RowIndex.barnYard.rawValue:
                     cell?.accessoryType = selectedAnimalTypes.contains("BarnYard") ? .checkmark : .none
-                case RowIndex.Reptiles.rawValue:
+                case RowIndex.reptiles.rawValue:
                     cell?.accessoryType = selectedAnimalTypes.contains("Reptile") ? .checkmark : .none
-                case RowIndex.Rabbits.rawValue:
+                case RowIndex.rabbits.rawValue:
                     cell?.accessoryType = selectedAnimalTypes.contains("Rabbit") ? .checkmark : .none
                 default:
                     cell?.accessoryType = .none
@@ -101,23 +101,23 @@ class FilterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case RowIndex.All.rawValue:
+        case RowIndex.all.rawValue:
             toggleSelectedAnimalType("all")
-        case RowIndex.Dogs.rawValue:
+        case RowIndex.dogs.rawValue:
             toggleSelectedAnimalType("Dog")
-        case RowIndex.Cats.rawValue:
+        case RowIndex.cats.rawValue:
             toggleSelectedAnimalType("Cat")
-        case RowIndex.Birds.rawValue:
+        case RowIndex.birds.rawValue:
             toggleSelectedAnimalType("Bird")
-        case RowIndex.SmallFurry.rawValue:
+        case RowIndex.smallFurry.rawValue:
             toggleSelectedAnimalType("Small&Furry")
-        case RowIndex.Horses.rawValue:
+        case RowIndex.horses.rawValue:
             toggleSelectedAnimalType("Horse")
-        case RowIndex.BarnYard.rawValue:
+        case RowIndex.barnYard.rawValue:
             toggleSelectedAnimalType("BarnYard")
-        case RowIndex.Reptiles.rawValue:
+        case RowIndex.reptiles.rawValue:
             toggleSelectedAnimalType("Reptile")
-        case RowIndex.Rabbits.rawValue:
+        case RowIndex.rabbits.rawValue:
             toggleSelectedAnimalType("Rabbit")
         default:
             print("no action")
