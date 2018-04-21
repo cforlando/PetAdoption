@@ -39,6 +39,8 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
 
     let refreshControl = UIRefreshControl()
     var isLastPage = false
+    var isLoading = false
+    
     @objc weak var actionToEnable : UIAlertAction?
 
     ////////////////////////////////////////////////////////////
@@ -208,11 +210,13 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
 
     func loadPets(offset: String? = nil)
     {
+        if isLoading { return } // Do not load if currently is loading
         // reset will be used to determine if we need to empty our data source,
         // the assumption being that if we are not passing an offset to this function,
         // then we are either refreshing the list or creating a new list from a new zip code
         let reset = (offset == nil) ? true : false
-        
+        self.isLoading = true
+        print("isloading: \(self.isLoading)")
         guard let zipCode = UserDefaults.standard.string(forKey: Constants.ZIPCODE_KEY) else { return }
         requestManager.request(PetFinderPetsFrom: zipCode, offset: offset)
         { pets, lastOffset, error in
@@ -242,6 +246,8 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
             }
             
             self.refreshControl.endRefreshing()
+            self.isLoading = false
+            print("isloading: \(self.isLoading)")
         }
     }
     
@@ -315,7 +321,7 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
     {
         let loadingView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: LoadingPetsView.reuseIdentifier, for: indexPath) as! LoadingPetsView
         
-        if self.isLastPage
+        if self.isLoading
         {
             loadingView.activityIndicator.stopAnimating()
         }
