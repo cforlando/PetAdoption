@@ -245,6 +245,22 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
         }
     }
     
+    func loadNextItems() {
+        if let lastOffset = self.lastOffset,
+            let offset = Int(lastOffset) // this conversion is here simply to accommodate for the comparison below
+        {
+            if offset < Constants.MAX_SEARCH_RESULTS
+            {
+                loadPets(offset: lastOffset)
+                self.isLastPage = false
+            }
+            else
+            {
+                self.isLastPage = true
+            }
+        }
+    }
+    
     ////////////////////////////////////////////////////////////
 
     @objc func refreshTriggered()
@@ -287,19 +303,9 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
     {
-        if indexPath.item == self.filteredPetData.count - 1,
-            let lastOffset = self.lastOffset,
-            let offset = Int(lastOffset) // this conversion is here simply to accommodate for the comparison below
+        if indexPath.item == self.filteredPetData.count - 1
         {
-            if offset < Constants.MAX_SEARCH_RESULTS
-            {
-                loadPets(offset: lastOffset)
-                self.isLastPage = false
-            }
-            else
-            {
-                self.isLastPage = true
-            }
+            loadNextItems()
         }
     }
     
