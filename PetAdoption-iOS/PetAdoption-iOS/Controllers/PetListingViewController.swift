@@ -216,7 +216,6 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
         // then we are either refreshing the list or creating a new list from a new zip code
         let reset = (offset == nil) ? true : false
         self.isLoading = true
-        print("isloading: \(self.isLoading)")
         guard let zipCode = UserDefaults.standard.string(forKey: Constants.ZIPCODE_KEY) else { return }
         requestManager.request(PetFinderPetsFrom: zipCode, offset: offset)
         { pets, lastOffset, error in
@@ -247,7 +246,9 @@ class PetListingViewController: UIViewController, UIPopoverPresentationControlle
             
             self.refreshControl.endRefreshing()
             self.isLoading = false
-            print("isloading: \(self.isLoading)")
+            if self.filteredPetData.count == 0 && self.petData.count > 0 {
+                self.loadNextItems()
+            }
         }
     }
     
@@ -321,7 +322,7 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
     {
         let loadingView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: LoadingPetsView.reuseIdentifier, for: indexPath) as! LoadingPetsView
         
-        if self.isLoading
+        if self.isLastPage
         {
             loadingView.activityIndicator.stopAnimating()
         }
@@ -344,6 +345,9 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
         }
         
         collectionView.reloadData()
+        if self.filteredPetData.count == 0 && self.petData.count > 0 {
+            self.loadNextItems()
+        }
     }
 }
 
