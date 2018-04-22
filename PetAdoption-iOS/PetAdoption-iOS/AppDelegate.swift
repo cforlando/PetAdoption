@@ -57,10 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		navBar.barStyle = .black
 		
-		UIButton.appearance().tintColor = UIColor.themeTintColor()
 		UIBarButtonItem.appearance().tintColor = UIColor.themeTintColor()
 		UITabBar.appearance().tintColor = UIColor.themePrimaryColor()
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font:UIFont.themeNormalFont(ofSize: 10.0)], for: UIControlState.normal)
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font:UIFont.themeNormalFont(ofSize: 10.0)], for: UIControlState.normal)
 	}
 }
 

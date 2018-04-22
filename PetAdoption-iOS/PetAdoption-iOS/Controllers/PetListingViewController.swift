@@ -10,7 +10,7 @@ import UIKit
 import PetAdoptionTransportKit
 import AlamofireImage
 
-class PetListingViewController: UIViewController
+class PetListingViewController: UIViewController, UIPopoverPresentationControllerDelegate
 {
     ////////////////////////////////////////////////////////////
     // MARK: - Constants
@@ -23,18 +23,24 @@ class PetListingViewController: UIViewController
     ////////////////////////////////////////////////////////////
 
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
+    @IBOutlet weak var filterBarButton: UIBarButtonItem!
+    
+    @IBOutlet weak var noResultsLabel: UILabel!
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
     var petData = [PFPet]()
+    var filteredPetData = [PFPet]()
     var viewControllerTitle = "Home"
     let requestManager = PTKRequestManager.sharedInstance()
     var lastOffset: String?
 
     let refreshControl = UIRefreshControl()
     var isLastPage = false
+    var isLoading = false
+    
     @objc weak var actionToEnable : UIAlertAction?
 
     ////////////////////////////////////////////////////////////
@@ -112,10 +118,10 @@ class PetListingViewController: UIViewController
             segue.identifier == PetListingViewController.SEGUE_TO_PET_DETAILS_ID,
             let indexPath = sender as? IndexPath
         {
-            vc.pet = self.petData[indexPath.row]
+            vc.pet = self.filteredPetData[indexPath.row]
         }
     }
-
+    
     ////////////////////////////////////////////////////////////
     // MARK: - IBActions
     ////////////////////////////////////////////////////////////
@@ -125,6 +131,9 @@ class PetListingViewController: UIViewController
         presentZipCodeAlertController()
     }
 
+    @IBAction func filterButtonTapped(_ sender: UIBarButtonItem) {
+        presentFilterViewController()
+    }
     ////////////////////////////////////////////////////////////
     // MARK: - Helper Functions
     ////////////////////////////////////////////////////////////
@@ -175,6 +184,21 @@ class PetListingViewController: UIViewController
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func presentFilterViewController()
+    {
+        guard let filterVC = storyboard?.instantiateViewController(withIdentifier: "filterVC") as? FilterViewController else {fatalError("Error: could not instantiate filterVC")}
+        filterVC.delegate = self
+        filterVC.modalPresentationStyle = UIModalPresentationStyle.popover
+        let popVC = filterVC.popoverPresentationController!
+        popVC.delegate = self
+        popVC.barButtonItem = filterBarButton
+        self.present(filterVC, animated: true, completion: nil)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
     ////////////////////////////////////////////////////////////
 
     func setNavigationTitle(_ title: String)
@@ -186,11 +210,12 @@ class PetListingViewController: UIViewController
 
     func loadPets(offset: String? = nil)
     {
+        if isLoading { return } // Do not load if currently is loading
         // reset will be used to determine if we need to empty our data source,
         // the assumption being that if we are not passing an offset to this function,
         // then we are either refreshing the list or creating a new list from a new zip code
         let reset = (offset == nil) ? true : false
-        
+        self.isLoading = true
         guard let zipCode = UserDefaults.standard.string(forKey: Constants.ZIPCODE_KEY) else { return }
         requestManager.request(PetFinderPetsFrom: zipCode, offset: offset)
         { pets, lastOffset, error in
@@ -205,9 +230,11 @@ class PetListingViewController: UIViewController
                     if reset
                     {
                         self.petData = [PFPet]()
+                        self.filteredPetData = [PFPet]()
                     }
                     
                     self.petData += pets
+                    self.setFilteredAnimalTypes()
                     self.collectionView.reloadData()
                 }
                 
@@ -218,6 +245,26 @@ class PetListingViewController: UIViewController
             }
             
             self.refreshControl.endRefreshing()
+            self.isLoading = false
+            if self.filteredPetData.count == 0 && self.petData.count > 0 {
+                self.loadNextItems()
+            }
+        }
+    }
+    
+    func loadNextItems() {
+        if let lastOffset = self.lastOffset,
+            let offset = Int(lastOffset) // this conversion is here simply to accommodate for the comparison below
+        {
+            if offset < Constants.MAX_SEARCH_RESULTS
+            {
+                loadPets(offset: lastOffset)
+                self.isLastPage = false
+            }
+            else
+            {
+                self.isLastPage = true
+            }
         }
     }
     
@@ -237,7 +284,8 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return self.petData.count
+        self.noResultsLabel.isHidden = !(self.filteredPetData.count == 0)
+        return self.filteredPetData.count
     }
 
     ////////////////////////////////////////////////////////////
@@ -245,7 +293,7 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetCell.reuseIdentifier, for: indexPath) as! PetCell
-        let pet = petData[indexPath.row]
+        let pet = filteredPetData[indexPath.row]
         cell.configureCell(with: pet)
 		
         return cell
@@ -262,19 +310,9 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
     {
-        if indexPath.item == self.petData.count - 1,
-            let lastOffset = self.lastOffset,
-            let offset = Int(lastOffset) // this conversion is here simply to accommodate for the comparison below
+        if indexPath.item == self.filteredPetData.count - 1
         {
-            if offset < Constants.MAX_SEARCH_RESULTS
-            {
-                loadPets(offset: lastOffset)
-                self.isLastPage = false
-            }
-            else
-            {
-                self.isLastPage = true
-            }
+            loadNextItems()
         }
     }
     
@@ -294,5 +332,27 @@ extension PetListingViewController : UICollectionViewDelegate, UICollectionViewD
         }
         
         return loadingView
+    }
+    
+    func setFilteredAnimalTypes(){
+        let animalTypesSelected = FilterViewController.loadAnimalTypesSelected()
+        if animalTypesSelected.contains("all") {
+            self.filteredPetData = petData
+        } else {
+            self.filteredPetData = petData.filter {(pet:PFPet) -> Bool in
+                return animalTypesSelected.contains(pet.animalType.rawValue)
+            }
+        }
+        
+        collectionView.reloadData()
+        if self.filteredPetData.count == 0 && self.petData.count > 0 {
+            self.loadNextItems()
+        }
+    }
+}
+
+extension PetListingViewController: FilterSelectorDelegate {
+    func didChangeAnimalTypeSelections() {
+        self.setFilteredAnimalTypes()
     }
 }

@@ -14,6 +14,7 @@
 		42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC91251D67C7DA00B3B8FD /* PetCell.swift */; };
 		42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C252291C8881DE00B2BE6D /* BackgroundView.swift */; };
 		42C2522C1C8899BD00B2BE6D /* TransparentNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */; };
+		6F2A704C207EB59700BF5AA0 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A704B207EB59700BF5AA0 /* FilterViewController.swift */; };
 		90ADBC339006BDDE435B71C4 /* Pods_PetAdoption_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCC61B47493AD9AFC8BA810 /* Pods_PetAdoption_iOS.framework */; };
 		942F6A6A205F46CD00F3179F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F6A69205F46CD00F3179F /* Constants.swift */; };
 		942F6A6B205F46CD00F3179F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F6A69205F46CD00F3179F /* Constants.swift */; };
@@ -150,6 +151,7 @@
 		42C252291C8881DE00B2BE6D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundView.swift; path = Views/BackgroundView.swift; sourceTree = "<group>"; };
 		42C2522B1C8899BD00B2BE6D /* TransparentNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransparentNavBar.swift; path = Views/TransparentNavBar.swift; sourceTree = "<group>"; };
 		5FCC61B47493AD9AFC8BA810 /* Pods_PetAdoption_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetAdoption_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F2A704B207EB59700BF5AA0 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = Controllers/FilterViewController.swift; sourceTree = "<group>"; };
 		8AAD5FEFC48F2F2A23F42E1D /* Pods-PetAdoption-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoption-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetAdoption-iOS/Pods-PetAdoption-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		925933A48637FAFF5BE6240D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		942F6A69205F46CD00F3179F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -340,6 +342,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		6F2A704A207EB56D00BF5AA0 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				6F2A704B207EB59700BF5AA0 /* FilterViewController.swift */,
+			);
+			name = filter;
+			sourceTree = "<group>";
+		};
 		942F6A68205F46B600F3179F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +476,7 @@
 		D0950AF71C618D86002E198C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6F2A704A207EB56D00BF5AA0 /* filter */,
 				D0E5367F1C704206004794D8 /* LostPet */,
 				D0E5367E1C704200004794D8 /* Info */,
 				D0E5367D1C7041F9004794D8 /* Search */,
@@ -944,6 +955,7 @@
 				42ACC1AD1D68A8A3001C7C83 /* ReusableView.swift in Sources */,
 				42C2522C1C8899BD00B2BE6D /* TransparentNavBar.swift in Sources */,
 				42C2522A1C8881DE00B2BE6D /* BackgroundView.swift in Sources */,
+				6F2A704C207EB59700BF5AA0 /* FilterViewController.swift in Sources */,
 				42070E091D7470A100B02BA2 /* DescriptionCell.swift in Sources */,
 				D013BFA71C717935007C8808 /* ImageGalleryView.swift in Sources */,
 				42BC91261D67C7DA00B3B8FD /* PetCell.swift in Sources */,
