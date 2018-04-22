@@ -137,7 +137,7 @@
         <scene sceneID="ovg-Kd-rXg">
             <objects>
                 <tableViewController id="d7T-Wp-bkt" customClass="PetListingDetailVC" customModule="PetAdoption_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Byl-ep-Vay">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Byl-ep-Vay">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -204,7 +204,7 @@
                                     <outlet property="descriptionLabel" destination="lWj-Dv-7lT" id="D2l-lV-7Iu"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NormalCell" textLabel="mm4-b4-PZX" detailTextLabel="fE6-AQ-m4g" rowHeight="37" style="IBUITableViewCellStyleValue1" id="zgm-QT-Qja">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="NormalCell" textLabel="mm4-b4-PZX" detailTextLabel="fE6-AQ-m4g" rowHeight="37" style="IBUITableViewCellStyleValue1" id="zgm-QT-Qja">
                                 <rect key="frame" x="0.0" y="315" width="375" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zgm-QT-Qja" id="CWP-3Z-ZnD">

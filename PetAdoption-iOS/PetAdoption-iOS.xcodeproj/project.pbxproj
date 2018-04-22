@@ -722,7 +722,7 @@
 				TargetAttributes = {
 					D0950AC31C618C2F002E198C = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 4X359D924E;
+						DevelopmentTeam = N3E7249ZAC;
 						LastSwiftMigration = 0910;
 					};
 					D0950AD71C618C2F002E198C = {
@@ -1181,14 +1181,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4X359D924E;
+				DEVELOPMENT_TEAM = N3E7249ZAC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "PetAdoption-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cfo.petadoption;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhaquebaruma.petadoption;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1203,14 +1203,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4X359D924E;
+				DEVELOPMENT_TEAM = N3E7249ZAC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "PetAdoption-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cfo.petadoption;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhaquebaruma.petadoption;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
